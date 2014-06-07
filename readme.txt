@@ -19,6 +19,8 @@ That means only when users clicks on a button which says something like "Load Co
 
 1. Upload `Disqus Conditional Load` plug-in zip file to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Goto plugins editor and edit disqus-conditional-load.php file.
+4. You can see a line says "Your Disqus Name". Replace it with your disqus username for the website and save it.
 3. Ensure that you have not enabled comments while creating posts and pages.
 
 Note : Inorder to this plug-in work Disqus comments should be activated and comments should be disabled in posts and pages.
