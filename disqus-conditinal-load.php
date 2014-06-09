@@ -4,7 +4,7 @@
     Plugin URI: http://www.joelsays.com
     Description: Plugin to prevent loading disqus on all posts and pages. Disqus will be loaded only when button is clicked.
     Author: Joel James
-    Version: 1.0
+    Version: 3.0.0
     Author URI: http://www.joelsays.com/about
 	Copyright (c) 2014 Joel James
     */
