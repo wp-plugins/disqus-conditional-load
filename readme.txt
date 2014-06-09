@@ -3,7 +3,7 @@ Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,9 +19,11 @@ That means only when users clicks on a button which says something like "Load Co
 
 1. Upload `Disqus Conditional Load` plug-in zip file to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Goto plugins editor and edit disqus-conditional-load.php file.
-4. You can see a line says "Your Disqus Name". Replace it with your disqus username for the website and save it.
-3. Ensure that you have not enabled comments while creating posts and pages.
+3. You will see a maenu "JS Settings" in admin menu. Click on it
+4. Choose whether to load comments on Button Click or Scrolling
+5. Give your disqus username for the website (Please ensure you are giving correct username, unless it may not load proper comments)
+6. Save it by clicking on "Update Settingd".
+3. Ensure that you have not enabled comments while creating posts and pages. If you enable Disqus may load automatically.
 
 Note : Inorder to this plug-in work Disqus comments should be activated and comments should be disabled in posts and pages.
 
@@ -35,7 +37,18 @@ To disable Disqus comments auto load on all pages and posts.
 
 Yes. It will stop auto loading of Disqus scripts. So your page will be loaded more quickly.
 
+== Changelog ==
+
+= 1.0 =
+* Added first version without admin menu
+
+= 2.0 =
+* Added admin menu
+* Added two methods (onclick and onscroll)
+* User can change settings from admin page.
+
 == Upgrade Notice ==
 
-Currently we are on upgrade process to add settings page. After the upgrade users can choose whether to enable this in pages or posts or in both.
-You will be updated when the new version is ready. 
+= 2.0 =
+This version included admin menu so that users can change settings without affecting your theme.
+This version added one method in that users can choose whether to load comments on button click or scrolling.
