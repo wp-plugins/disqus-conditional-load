@@ -3,7 +3,7 @@ Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 2.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,16 +39,16 @@ Yes. It will stop auto loading of Disqus scripts. So your page will be loaded mo
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Added first version without admin menu
 
-= 2.0 =
+= 2.0.0 =
 * Added admin menu
 * Added two methods (onclick and onscroll)
 * User can change settings from admin page.
 
 == Upgrade Notice ==
 
-= 2.0 =
+= 2.0.0 =
 This version included admin menu so that users can change settings without affecting your theme.
 This version added one method in that users can choose whether to load comments on button click or scrolling.
