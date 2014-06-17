@@ -13,6 +13,9 @@ Disable Disqus comment auto load in posts and pages. This plug-in will create a 
 
 If you are using Disqus commenting system in your blog or website you might have noticed that your pages loading slowly. This is because Disqus will load it's scripts unnecessarily on all pages and posts. By using this plug-in you will be able to load Disqus comments only when needed.
 That means only when users clicks on a button which says something like "Load Comments" Disqus comments will be loaded. If users do not want to see comments it will not be loaded. This plug-in will increase page speed.
+Also main advantage of this plugin is you can use it without installing plugin on your website (But please make sure you have disqus account for this website).
+
+Visit <a href="http://www.joelsays.com/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
 
 == Installation ==
 
