@@ -28,7 +28,7 @@ Note : Inorder to this plug-in work Disqus comments is not needed. You can use t
 
 == Screenshots ==
 
-1. To see screenshots <a href="http://www.joelsays.com/disqus-conditional-load/" trget="_blank"> Click Here</a>
+1. To see screenshots <a href="http://www.joelsays.com/disqus-conditional-load/" target="_blank"> Click Here</a>
 
 == Frequently Asked Questions ==
 
