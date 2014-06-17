@@ -31,7 +31,7 @@ Author URI: http://www.joelsays.com/
 
 1. Upload `Disqus Conditional Load` plug-in zip file to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. You will see a maenu "JS Settings" in admin menu. Click on it
+3. You will see a maenu "Conditional Load" in admin menu. Click on it
 4. Choose whether to load comments on Button Click or Scrolling
 5. Give your disqus username for the website (Please ensure you are giving correct username, unless it may not load proper comments)
 6. Save it by clicking on "Update Settings".
