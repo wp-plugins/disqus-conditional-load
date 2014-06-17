@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 4.0
+Stable tag: 4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,7 @@ You have 2 option. On click or on scroll.
 * If username not given it will not load
 * Redirect to admin page after activation
 
-= 4.0 =
+= 4.5 =
 * Fixed issues on scroll option.
 * Improved codes.
 * Works without Disqus Installed.
@@ -70,6 +70,6 @@ You have 2 option. On click or on scroll.
 
 == Upgrade Notice ==
 
-= 4.0 =
+= 4.5 =
 Fixed some bugs in scroll load.
 Improved codes.

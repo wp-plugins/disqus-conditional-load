@@ -6,6 +6,7 @@
     Author: Joel James
     Version: 4.0
     Author URI: http://www.joelsays.com/about
+	Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 	Copyright (c) 2014 Joel James
     */
 ?>
@@ -53,10 +54,10 @@ window['disqus_' + key.replace('disqus','').toLowerCase()] = disqus_data[key];
 }
 }
 var dsq = document.createElement('script');
-dsq.type = 'text/javascript';
-dsq.async = true;
-dsq.src = 'http://' + window.".$username." + '.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://".$username.".disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }
 };
 $(window).scroll(check);
