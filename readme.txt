@@ -43,9 +43,10 @@ To disable Disqus comments auto load on all pages and posts.
 
 Yes. It will stop auto loading of Disqus scripts. So your page will be loaded more quickly.
 
-= How can I load Disqus using Disqus Conditional Load?=
+= How can I load Disqus using Disqus Conditional Load? =
 
 You have 2 option. On click or on scroll.
+
 == Changelog ==
 
 = 1.0 =
