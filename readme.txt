@@ -2,8 +2,8 @@
 Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, comments
 Requires at least: 3.0.1
-Tested up to: 3.9
-Stable tag: 3.5
+Tested up to: 3.9.1
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,9 @@ Disable Disqus comment auto load in posts and pages. This plug-in will create a 
 If you are using Disqus commenting system in your blog or website you might have noticed that your pages loading slowly. This is because Disqus will load it's scripts unnecessarily on all pages and posts. By using this plug-in you will be able to load Disqus comments only when needed.
 That means only when users clicks on a button which says something like "Load Comments" Disqus comments will be loaded. If users do not want to see comments it will not be loaded. This plug-in will increase page speed.
 
+== Screenshots ==
+
+1. To see screenshots <b><a href="http://www.joelsays.com/disqus-conditional-load/" trget="_blank"> Click Here</a>
 
 == Installation ==
 
@@ -22,10 +25,10 @@ That means only when users clicks on a button which says something like "Load Co
 3. You will see a maenu "JS Settings" in admin menu. Click on it
 4. Choose whether to load comments on Button Click or Scrolling
 5. Give your disqus username for the website (Please ensure you are giving correct username, unless it may not load proper comments)
-6. Save it by clicking on "Update Settingd".
+6. Save it by clicking on "Update Settings".
 3. Ensure that you have not enabled comments while creating posts and pages. If you enable Disqus may load automatically.
 
-Note : Inorder to this plug-in work Disqus comments should be activated and comments should be disabled in posts and pages.
+Note : Inorder to this plug-in work Disqus comments is not needed. You can use this plug-in alone. You should disable comments in pages and posts where you want this plugin to work.
 
 == Frequently Asked Questions ==
 
@@ -37,6 +40,9 @@ To disable Disqus comments auto load on all pages and posts.
 
 Yes. It will stop auto loading of Disqus scripts. So your page will be loaded more quickly.
 
+= How can I load Disqus using Disqus Conditional Load?=
+
+You have 2 option. On click or on scroll.
 == Changelog ==
 
 = 1.0 =
@@ -51,8 +57,14 @@ Yes. It will stop auto loading of Disqus scripts. So your page will be loaded mo
 * If username not given it will not load
 * Redirect to admin page after activation
 
+= 4.0 =
+* Fixed issues on scroll option.
+* Improved codes.
+* Works without Disqus Installed.
+
 
 == Upgrade Notice ==
 
-= 3.5 =
-Disqus will be loaded only if username is added
+= 4.0 =
+Fixed some bugs in scroll load.
+Improved codes.
