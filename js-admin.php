@@ -31,5 +31,5 @@
         </p>
     </form>
 </div>
-<h4>If you like my plugin please do contribute as by Paypal donation (<font color="green">mr.joelcj@gmail.com</font>). That will really help me to make free plugins like this.<br/><br/>
+<h4>If you like my plugin please do contribute as by Paypal donation <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4"><font color="green">HERE</font></a>. That will really help me to make free plugins like this.<br/><br/>
 <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4>

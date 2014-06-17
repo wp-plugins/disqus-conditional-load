@@ -4,7 +4,7 @@
     Plugin URI: http://www.joelsays.com/disqus-conditional-load/
     Description: Plugin to prevent loading disqus on all posts and pages. Disqus will be loaded only when button is clicked.
     Author: Joel James
-    Version: 4.5
+    Version: 5.0
     Author URI: http://www.joelsays.com/about
 	Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 	Copyright (c) 2014 Joel James
@@ -73,7 +73,7 @@ add_filter('the_content', 'add_post_content');
 add_action('admin_menu', 'js_settings_menu');
 	 
 function js_settings_menu() {
-	 	    add_menu_page('JS Settings', 'JS Settings', 'administrator', 'js_settings', 'js_admin');	 
+	 	    add_menu_page('Conditional Load', 'Conditional Load', 'administrator', 'js_settings', 'js_admin',plugin_dir_url( __FILE__ ) . 'images/js-icon.png');	 
 			}
 function js_admin() {
     include('js-admin.php');
