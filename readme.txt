@@ -8,7 +8,7 @@ Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Disable Disqus comment auto load in posts and pages. This plug-in will create a button and Disqus will be loaded only when user clicks on button.
+Disable Disqus comment auto load in posts and pages. This plug-in will create a button and Disqus will be loaded only when user clicks on button or scroll down.
 
 == Description ==
 
