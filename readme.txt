@@ -18,7 +18,7 @@ Also main advantage of this plugin is you can use it without installing Disqus p
 
 Visit <a href="http://www.joelsays.com/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
 
-<h4><a href="http://www.joelsays.com/disqus-conditional-load-pro" target="_blank">PRO version</a> is now available with SHORTCODE facility. <font color="green">Load Disqus where ever on the page using SHORTCODE</font></h4>
+<h4><a href="http://www.joelsays.com/disqus-conditional-load-pro" target="_blank">PRO version</a></h4> is now available with <b>SHORTCODE</b> facility. <font color="green">Load Disqus where ever on the page using <b>SHORTCODE</font></b>
 
 Advanced Features in <a href="http://www.joelsays.com/disqus-conditional-load-pro" target="_blank">Pro Version </a>are,
 

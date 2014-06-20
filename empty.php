@@ -13,4 +13,3 @@ if($type=='scroll'): ?>
 <div id='disqus_thread'></div>
 <?php
 endif;
-?>
