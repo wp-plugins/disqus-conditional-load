@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 6.0
+Stable tag: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ Advanced Features in <a href="http://www.joelsays.com/disqus-conditional-load-pr
 == Support ==
 Please contact author directly here http://www.joelsays.com/contact-me
 
-Current Version: 6.0
+Current Version: 6.1
 
 Author: Joel James
 Author URI: http://www.joelsays.com/
@@ -97,8 +97,12 @@ Yes. You can.
 = 6.0 =
 * option to disable comments on home page/front page.
 
+= 6.1 =
+* Subversion update with structure fix.
+
+
 
 == Upgrade Notice ==
 
-= 6.0 =
+= 6.1 =
 Ability to disable on home page.
