@@ -1,16 +1,17 @@
 <?php
-$username = get_option('username');
-if($username!==''){
-function add_post_content($content) {
 
-$type = get_option('type');
 $username = get_option('username');
-	if(is_single() || is_page()) :
-	if (!is_front_page() && !is_home()):
-	if($type=='click'):
-	$content .= "<script>
+if ($username !== '') {
+if(!function_exists('js_add_post_content')) {
+    function js_add_post_content($content) {
+        $type = get_option('type');
+        $username = get_option('username');
+        if (is_single() || is_page()) {
+            if (!is_front_page() && !is_home()) {
+                if ($type == 'click') {
+                    $content .= "<script>
 function load_disqus() {
-    var disqus_shortname = '".$username."';
+    var disqus_shortname = '" . $username . "';
     (function () {
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
@@ -20,9 +21,9 @@ function load_disqus() {
     })();
 }
 </script>";
-endif;
-if($type=='scroll'):
-$content .= "<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+                }
+                if ($type == 'scroll') {
+                    $content .= "<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <script>
 $(function(){
 var disqus_div = $('#disqus_thread');
@@ -41,7 +42,7 @@ window['disqus_' + key.replace('disqus','').toLowerCase()] = disqus_data[key];
 var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = 'http://".$username.".disqus.com/embed.js';
+        dsq.src = 'http://" . $username . ".disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }
 };
@@ -50,11 +51,11 @@ check();
 }
 });
 </script>";
-endif;
-endif;
-endif;
-return $content;
-
+                }
+                return $content;
+            }
+        }
+    }
 }
-add_filter('the_content', 'add_post_content');
+add_filter('the_content', 'js_add_post_content');
 }
