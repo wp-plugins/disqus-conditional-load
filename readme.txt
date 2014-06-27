@@ -19,7 +19,7 @@ You can decide how to load and when to load comments. Use this plugin and see th
 Visit <a href="http://www.joelsays.com/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
 
 
-Features of <a href="http://www.joelsays.com/disqus-conditional-load" target="_blank">Disqus Conditional Load</a>are,
+Features of <a href="http://www.joelsays.com/disqus-conditional-load" target="_blank">Disqus Conditional Load</a> are,
 
  * You can use SHORTCODE to load disqus where ever on the page.
  * Load Disqus scripts only when needed.
