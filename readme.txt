@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 7.2
+Stable tag: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,7 +38,7 @@ Features of <a href="http://www.joelsays.com/disqus-conditional-load" target="_b
 == Support ==
 Please contact author directly here http://www.joelsays.com/contact-me
 
-Current Version: 7.2
+Current Version: 7.3
 
 Author: Joel James
 Author URI: http://www.joelsays.com/
@@ -91,6 +91,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 7.3 =
+* Bug fix.
+
 = 1.0 =
 * Added first version without admin menu
 
@@ -125,5 +128,5 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 7.2 =
-More advanced features. Changed pro version to FREE !!
+= 7.3 =
+Bug fix by users suggestion.
