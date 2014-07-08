@@ -6,7 +6,9 @@ if(!function_exists('js_add_post_content')) {
     function js_add_post_content($content) {
         $type = get_option('type');
         $username = get_option('username');
-        if (is_single() || is_page()) {
+        /* removed by users request
+		//if (is_single() || is_page()) {
+		*/
             if ($type == 'click') {
                 $content .= "<script>
 							function load_disqus() {
@@ -52,7 +54,7 @@ if(!function_exists('js_add_post_content')) {
 							</script>";
             }
             return $content;
-        }
+        //}
     }
 }
 add_filter('the_content', 'js_add_post_content');

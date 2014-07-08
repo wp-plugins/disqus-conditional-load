@@ -6,7 +6,9 @@ if(!function_exists('js_add_post_content')) {
     function js_add_post_content($content) {
         $type = get_option('type');
         $username = get_option('username');
-        if (is_single() || is_page()) {
+       /* removed by users request
+	   //if (is_single() || is_page()) {
+	   */
             if (!is_front_page() && !is_home()) {
                 if ($type == 'click') {
                     $content .= "<script>
@@ -54,7 +56,7 @@ check();
                 }
                 return $content;
             }
-        }
+        //}
     }
 }
 add_filter('the_content', 'js_add_post_content');
