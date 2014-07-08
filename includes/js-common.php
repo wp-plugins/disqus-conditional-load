@@ -6,9 +6,9 @@ if(!function_exists('js_add_post_content')) {
     function js_add_post_content($content) {
         $type = get_option('type');
         $username = get_option('username');
-        /* removed by users request
+        /* removed by users request */
 		//if (is_single() || is_page()) {
-		*/
+
             if ($type == 'click') {
                 $content .= "<script>
 							function load_disqus() {
