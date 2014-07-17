@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 7.4
+Stable tag: 7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,27 +16,27 @@ Use Disqus comments with advanced fetures. Disqus will automatically load its sc
 
 You can decide how to load and when to load comments. Use this plugin and see the speed magic.
 
-Visit <a href="http://www.joelsays.com/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
+Visit <a href="http://www.joelsays.com/plugins/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
 
 
-Features of <a href="http://www.joelsays.com/disqus-conditional-load" target="_blank">Disqus Conditional Load</a> are,
+Features of <a href="http://www.joelsays.com/plugins/disqus-conditional-load/" target="_blank">Disqus Conditional Load</a> are,
 
  * You can use SHORTCODE to load disqus where ever on the page.
  * Load Disqus scripts only when needed.
  * Choose how to load Disqus comments ( On scroll or on click ).
  * Hide button after comment loads.
  * Customize button label.
- * Quick <a href="http://www.joelsays.com/contact-me">Direct Support</a>.
+ * Quick <a href="http://www.joelsays.com/contact-me/">Direct Support</a>.
  * Force disable comments on home page.
  * Disable comments using default WordPress option.
  * Free to use with lifetime updates.
  * More feature coming soon.. (You can suggest also)
 
- Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me" target="_blank">this form </a>if you have any issues.
- Visit developer's blog - <a href="http://www.joelsays.com/contact-me" target="_blank">Joel Says</a>
+ Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
+ Visit developer's blog - <a href="http://www.joelsays.com/contact-me/" target="_blank">Joel Says</a>
  
 == Support ==
-Please contact author directly here http://www.joelsays.com/contact-me
+Please contact author directly here http://www.joelsays.com/contact-me/
 
 Current Version: 7.4
 
@@ -61,7 +61,7 @@ Note : You can disable comments on pages or posts using default disqus options.
 
 == Screenshots ==
 
-To see screenshots go to http://www.joelsays.com/disqus-conditional-load
+To see screenshots go to http://www.joelsays.com/plugins/disqus-conditional-load/
 
 == Frequently Asked Questions ==
 
@@ -90,6 +90,9 @@ Yes. You can. Just place shorcode [js-disqus]. Then Disqus will be loaded there.
 Yes. You can.
 
 == Changelog ==
+
+= 7.5 =
+* Bug fix.
 
 = 7.4 =
 * Bug fix.

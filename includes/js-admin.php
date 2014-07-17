@@ -3,7 +3,8 @@
 * Admin setting form
 * Using post values
 */
-    if($_POST['oscimp_hidden'] == 'Y') {
+	// Checking for post value - Suggested by Jeff Behnke
+    if( isset($_POST['oscimp_hidden']) && $_POST['oscimp_hidden'] == 'Y' ) {
         $type = $_POST['type'];
         update_option('type', $type);
 		
@@ -48,7 +49,7 @@
 		<p><?php _e("Hide After Click: " ); ?><select name='click_hide'><option value='yes' <?php if($click_hide=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($click_hide=='no'){echo 'selected';}?>>No</option></select></p>		
 		<hr /></div>
 		<?php    echo "<h4>" . __( 'ShortCode Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-		<p><?php _e("Load Comments where <b>Short Code</b> used: " ); ?><select name='shortcode'><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option></select></p>		
+		<p><?php _e("Load Comments where <b>Short Code</b> used: " ); ?><select name='shortcode'><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option></select></p>		
 		
 		<hr />
 		<?php    echo "<h4>" . __( 'Disqus Settings', 'oscimp_trdom' ) . "</h4>"; ?>
@@ -61,8 +62,8 @@
     </form>
 </td><td width="30%" align="center">
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
-<h4>If you like my plugin please make a small Paypal donation so that I can keep all my works for FREE<h3>
-Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></td></tr></table></div>
+<h4>If you think my plugin is useful, please consider a small donation.</h4>
+<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></td></tr></table></div>
 <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <script type="text/javascript">
 $('#type').change(function(){
