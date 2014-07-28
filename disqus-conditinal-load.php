@@ -5,8 +5,8 @@
   Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
   Description: Plugin to prevent loading disqus on all posts and pages. Disqus will be loaded only when button is clicked or scroll.
   Author: Joel James
-  Version: 7.5
-  Author URI: http://www.joelsays.com/about
+  Version: 7.6
+  Author URI: http://www.joelsays.com/about-me/
   Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
   Copyright (c) 2014 Joel James
  */
