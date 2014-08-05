@@ -30,7 +30,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Hide button after comment loads.
 * Customize button label.
 * Auto-sync (backup) of comments with Disqus and WordPress database
-* Quick <a href="http://www.joelsays.com/contact-me/">Direct Support</a>.
+* Quick <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/">Direct Support</a>.
 * Uses the Disqus API
 * Disable comments using default WordPress option.
 * Free to use with lifetime updates.
@@ -49,7 +49,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Increased exposure and readership
 
 Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
-Visit developer's blog - <a href="http://www.joelsays.com/contact-me/" target="_blank">Joel Says</a>
+Visit Plugin Support Forum - <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Joel Says</a>
 
 == Installation ==
 
@@ -163,6 +163,6 @@ Yes. You can.
 
 == Support ==
 
-* Visit http://www.joelsays.com/plugins/disqus-conditional-load/ for help info and support.
+* Visit http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/ for help info and support.
 
 * Visit http://www.joelsays.com/contact-me/ for direct help from developer.
