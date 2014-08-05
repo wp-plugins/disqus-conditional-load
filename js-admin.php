@@ -4,66 +4,67 @@
 * Using post values
 */
 	// Checking for post value - Suggested by Jeff Behnke
-    if( isset($_POST['oscimp_hidden']) && $_POST['oscimp_hidden'] == 'Y' ) {
+    if( isset($_POST['js_hidden']) && $_POST['js_hidden'] == 'Y' ) {
         $type = $_POST['type'];
         update_option('type', $type);
 		
 		$button = $_POST['button'];
         update_option('button', $button);
 		
-		$click_hide = $_POST['click_hide'];
-        update_option('click_hide', $click_hide);
-		
-		$disable = $_POST['disable'];
-        update_option('disable', $disable);
+		$hide = $_POST['hide'];
+        update_option('hide', $hide);
+        
+        $class = $_POST['class'];
+        update_option('class', $class);
 		
 		$shortcode = $_POST['shortcode'];
         update_option('shortcode', $shortcode);
          
-        $username = $_POST['username'];
-        update_option('username', $username);
         ?>
         <div class="updated"><p><strong><?php _e('Options saved.' ); ?></strong></p></div>
         <?php
     } else {
         $type = get_option('type');
-        $username = get_option('username');
 		$button = get_option('button');
-		$click_hide = get_option('click_hide');
+                $class = get_option('class');
+		$hide = get_option('hide');
 		$shortcode = get_option('shortcode');
-		$disable = get_option('disable');
     }
 ?>
 <div class="wrap">
 <table width="100%">
 <tr><td width="70%">
-    <?php    echo "<h2>" . __( 'Disqus Conditional Load', 'oscimp_trdom' ) . " <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h2>"; ?>
-    <form name="oscimp_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
-        <input type="hidden" name="oscimp_hidden" value="Y">
+    <?php    echo "<h3>" . __( 'Disqus Conditional Load', 'oscimp_trdom' ) . " <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h3>"; ?>
+    <form name="oscimp_form" method="post" action="?page=disqus">
+	<?php wp_nonce_field('dsq-wpnonce_js', 'dsq-form_nonce_js'); ?>
+        <input type="hidden" name="js_hidden" value="Y">
         <?php    echo "<h4>" . __( 'Disqus Load Settings', 'oscimp_trdom' ) . "</h4>"; ?>
         <p><?php _e("Load Disqus when: " ); ?><select name='type' id='type'><option value='click' <?php if($type=='click'){echo 'selected';}?>>On Click</option><option value='scroll' <?php if($type=='scroll'){echo 'selected';}?>>On Scroll</option></select></p>
-        <p><?php _e("Disable comments in home page: " ); ?><select name='disable'><option value='yes' <?php if($disable=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($disable=='no'){echo 'selected';}?>>No</option></select></p>
+		<p>This option will prevent Disqus from automatically loading comments and scripts on pages or posts.</p>
 		<hr />
 		<div id='button_prop'><?php echo "<h4>" . __( 'Button Settings', 'oscimp_trdom' ) . "</h4>"; ?>
         <p><?php _e("Button Name: " ); ?><input type="text" name="button" value="<?php echo $button; ?>" size="20"></p>
-		<p><?php _e("Hide After Click: " ); ?><select name='click_hide'><option value='yes' <?php if($click_hide=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($click_hide=='no'){echo 'selected';}?>>No</option></select></p>		
+        <p><?php _e("Button Class: " ); ?><input type="text" name="class" value="<?php echo $class; ?>" size="20"><br/>
+        By using custom class you can use your own style for comment button. Leave empty if you don't want.</p>
+        <p><?php _e("Hide After Click: " ); ?><select name='hide'><option value='yes' <?php if($hide=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($hide=='no'){echo 'selected';}?>>No</option></select><br/>
+        Choose whether you want to hide button after clicking and loading comments.</p>		
 		<hr /></div>
 		<?php    echo "<h4>" . __( 'ShortCode Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-		<p><?php _e("Load Comments where <b>Short Code</b> used: " ); ?><select name='shortcode'><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option></select></p>		
-		
-		<hr />
-		<?php    echo "<h4>" . __( 'Disqus Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-        <p><?php _e("Disqus Site Identification Short Name: " ); ?><input type="text" id="username" name="username" value="<?php echo $username; ?>" size="20"><br/>
-		<?php _e(" <font color='green'>Please make sure you are using username for this site</font>" ); ?></p>         
-     
+                <p><?php _e("Load Comments where <b>Short Code</b> used: " ); ?><select name='shortcode'><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option></select><br/>
+                    Please note that if you enable this comments will be loaded only where shortcode <b>[js-disqus]</b> used.</p>
         <p class="submit">
-        <input type="submit" name="Submit" id="submit" value="<?php _e('Update Options', 'oscimp_trdom' ) ?>" />
+        <button class="button-primary button" type="submit" name="Submit" id="submit"><?php _e('Update Options', 'oscimp_trdom' ) ?></button>
         </p>
     </form>
 </td><td width="30%" align="center">
-<?php if(get_option('username')!=='') {?>
-<h2><a href="https://<?php echo $username;?>.disqus.com/admin/moderate/" target="_blank"><strong>Moderate Comments</strong></a>
-</h2><br/><br/><br/><br/><hr/><?php }?>
+<?php
+$base = is_ssl() ? 'https://' : 'http://';
+$url = get_option('disqus_forum_url');
+if ($url) { $mod_url = $base.$url.'.'.DISQUS_DOMAIN.'/admin/moderate/';}
+else { $mod_url = DISQUS_URL.'admin/moderate/'; }
+?>
+<h2><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
+</h2><br/><br/><br/><br/><hr/>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
 <h4>If you think my plugin is useful, please consider a small donation.</h4>
 <h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></td></tr></table></div>

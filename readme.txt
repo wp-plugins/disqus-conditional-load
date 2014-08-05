@@ -4,72 +4,81 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 7.6
+Stable tag: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Disqus comments with advanced features. Lazy load Disqus on button click or scroll.
+Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
 
 == Description ==
 
-Use Disqus comments with advanced fetures. Disqus will automatically load its scripts on all pages. So it will slow down your website. Use this plugin and use Disqus Comment Syatem with advanced fetures.
+Advanced version of Disqus Comment System (non official). Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
 
-You can decide how to load and when to load comments. Use this plugin and see the speed magic.
+You can decide how, when, where to load comments. This plugin prevents unwanted script loading and make your website super fast.
 
-Visit <a href="http://www.joelsays.com/plugins/disqus-conditional-load/">Disqus Conditiopnal Load Official Website</a>
+Visit <a href="http://www.joelsays.com/plugins/disqus-conditional-load/">Disqus Conditional Load Official Website</a>
 
+The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus API and by syncing with WordPress comments.
 
-Features of <a href="http://www.joelsays.com/plugins/disqus-conditional-load/" target="_blank">Disqus Conditional Load</a> are,
+= Disqus Conditional Load Features =
 
- * You can use SHORTCODE to load disqus where ever on the page.
- * Load Disqus scripts only when needed.
- * Choose how to load Disqus comments ( On scroll or on click ).
- * Hide button after comment loads.
- * Customize button label.
- * Link to moderation dashboard.
- * Quick <a href="http://www.joelsays.com/contact-me/">Direct Support</a>.
- * Force disable comments on home page.
- * Disable comments using default WordPress option.
- * Free to use with lifetime updates.
- * More feature coming soon.. (You can suggest also)
+* Comments indexable by search engines (SEO-friendly).
+* Support for importing existing comments.
+* You can use SHORTCODE to load disqus where ever on the page.
+* Prevent auto load of Disqus Comments.
+* Choose how to load Disqus comments ( On scroll or on click ).
+* Hide button after comment loads.
+* Customize button label.
+* Auto-sync (backup) of comments with Disqus and WordPress database
+* Quick <a href="http://www.joelsays.com/contact-me/">Direct Support</a>.
+* Uses the Disqus API
+* Disable comments using default WordPress option.
+* Free to use with lifetime updates.
+* More feature coming soon.. (You can suggest also)
 
- Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
- Visit developer's blog - <a href="http://www.joelsays.com/contact-me/" target="_blank">Joel Says</a>
- 
-== Support ==
-Please contact author directly here http://www.joelsays.com/contact-me/
+= Disqus Features (Official) =
 
-Current Version: 7.6
+* Threaded comments and replies
+* Notifications and reply by email
+* Subscribe and RSS options
+* Aggregated comments and social mentions
+* Powerful moderation and admin tools
+* Full spam filtering, blacklists and whitelists
+* Support for Disqus community widgets
+* Connected with a large discussion community
+* Increased exposure and readership
 
-Author: Joel James
-Author URI: http://www.joelsays.com/
-
+Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
+Visit developer's blog - <a href="http://www.joelsays.com/contact-me/" target="_blank">Joel Says</a>
 
 == Installation ==
 
-1. Upload `Disqus Conditional Load` plug-in zip file to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. You will see a menu "Conditional Load" in admin menu. Go there.
-4. Choose whether to load comments on Button Click or Scrolling
-5. Chose whether to load in home page.
-6. If you choose load disqus on click then give button name. ( It will show "Load Comments" as default).
-7. Choose whether you want to hide button when comment loads.
-8. Choose if you want to use SHORTCODE instead of normal load.
-9. Give your disqus username for the website (Please ensure you are giving correct username, unless it may not load proper comments).
-10. If you want to moderate your comments use moderation link after entering username.
-10. Save it by clicking on "Update Settings".
+**NOTE: Please make sure that you [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before activating this plugin.**
 
-Note : You can disable comments on pages or posts using default disqus options.
+1. Unpack archive to this archive to the 'wp-content/plugins/' directory inside
+   of WordPress
 
-== Screenshots ==
+2. From your blog administration, click on Comments -> Conditional Load - Disqus to change settings
 
-1. **Settings** - Settings page of Disqus Conditional Load. See more details here http://www.joelsays.com/plugins/disqus-conditional-load/
+3. Change settings according to your needs. Then save it.
+
+= More Information and Support =
+
+Go to [http://www.joelsays.com/plugins/disqus-conditional-load](http://www.joelsays.com/plugins/disqus-conditional-load)
 
 == Frequently Asked Questions ==
 
 = What is the use of Disqus Conditional Load? =
 
 To disable Disqus comments auto load on all pages and posts. And lazy loading Disqus.
+
+= Should I use Disqus plugin along with this plugin? =
+
+No. This plugin can be used instead of Disqus.
+
+= What this doesn't offer when compared to Disqus official plugin? =
+
+This plugin offers all features of official plugin + many extra features.
 
 = Will this plug-in create any effects in page speed? =
 
@@ -78,10 +87,6 @@ Yes. It will stop auto loading of Disqus scripts. So your page will be loaded mo
 = How can I load Disqus using Disqus Conditional Load? =
 
 You have 2 option. On click or on scroll.
-
-= Can I moderate comments? =
-
-Yes. After entering username it will show you a link to moderate dashboard.
 
 = Can I disable comments on some pages using Disqus Conditional Load? =
 
@@ -95,10 +100,21 @@ Yes. You can. Just place shorcode [js-disqus]. Then Disqus will be loaded there.
 
 Yes. You can.
 
+== Screenshots ==
+
+1. Disqus Comments UI
+2. Conditional Load Settings.
+3. Disqus Comment Settings.
+4. Moderation Dashboard.
+
 == Changelog ==
 
-= 7.6 =
-* Added moderation panel link.
+= 8.0 =
+* Integrated with official Disqus plugin.
+* Added all official plugin features.
+* Custom class usage on button.
+* Moved menu to comments menu
+* Bug fixes.
 
 = 7.5 =
 * Bug fix.
@@ -136,9 +152,17 @@ Yes. You can.
 * Added more advanced features.
 * Withdrawn PRO version. All features are free!!
 
-
-
 == Upgrade Notice ==
 
-= 7.6 =
-Added moderation panel link.
+= 8.0 =
+* Integrated with official Disqus plugin.
+* Added all official plugin features.
+* Custom class usage on button.
+* Moved menu to comments menu
+* Bug fixes.
+
+== Support ==
+
+* Visit http://www.joelsays.com/plugins/disqus-conditional-load/ for help info and support.
+
+* Visit http://www.joelsays.com/contact-me/ for direct help from developer.
