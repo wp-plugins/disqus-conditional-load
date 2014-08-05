@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 8.0
+Stable tag: 8.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 8.0.1 =
+* Support forum added
+
 = 8.0 =
 * Integrated with official Disqus plugin.
 * Added all official plugin features.
@@ -154,12 +157,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0 =
-* Integrated with official Disqus plugin.
-* Added all official plugin features.
-* Custom class usage on button.
-* Moved menu to comments menu
-* Bug fixes.
+= 8.0.1 =
+* Support forum added
 
 == Support ==
 
