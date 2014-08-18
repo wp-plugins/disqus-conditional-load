@@ -10,9 +10,6 @@
 		
 		$button = $_POST['button'];
         update_option('button', $button);
-		
-		$hide = $_POST['hide'];
-        update_option('hide', $hide);
         
         $class = $_POST['class'];
         update_option('class', $class);
@@ -45,9 +42,7 @@
 		<div id='button_prop'><?php echo "<h4>" . __( 'Button Settings', 'oscimp_trdom' ) . "</h4>"; ?>
         <p><?php _e("Button Name: " ); ?><input type="text" name="button" value="<?php echo $button; ?>" size="20"></p>
         <p><?php _e("Button Class: " ); ?><input type="text" name="class" value="<?php echo $class; ?>" size="20"><br/>
-        By using custom class you can use your own style for comment button. Leave empty if you don't want.</p>
-        <p><?php _e("Hide After Click: " ); ?><select name='hide'><option value='yes' <?php if($hide=='yes'){echo 'selected';}?>>Yes</option><option value='no' <?php if($hide=='no'){echo 'selected';}?>>No</option></select><br/>
-        Choose whether you want to hide button after clicking and loading comments.</p>		
+        By using custom class you can use your own style for comment button. Leave empty if you don't want.</p>	
 		<hr /></div>
 		<?php    echo "<h4>" . __( 'ShortCode Settings', 'oscimp_trdom' ) . "</h4>"; ?>
                 <p><?php _e("Load Comments where <b>Short Code</b> used: " ); ?><select name='shortcode'><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option></select><br/>

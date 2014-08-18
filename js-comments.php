@@ -38,14 +38,15 @@ $type = get_option('type'); ?>
             </div> <!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
-            <ul id="dsq-comments">
+            <!--<ul id="dsq-comments">
                 <?php
                     /* Loop through and list the comments. Tell wp_list_comments()
                      * to use dsq_comment() to format the comments.
-                     */
+                     
                     wp_list_comments(array('callback' => 'dsq_comment'));
+					*/
                 ?>
-            </ul>
+            </ul>-->
 
 <?php if (get_comment_pages_count() > 1 && get_option('page_comments')): // Are there comments to navigate through? ?>
             <div class="navigation">
@@ -184,16 +185,4 @@ check();
 	})();
 /* ]]> */
 </script>
-<?php }
-$hide = get_option('hide');
-if ($hide == 'yes'){ ?>
-<script type='text/javascript'>
-    var button = document.getElementById('js_comment_div')
-    button.addEventListener('click', hideshow, false);
-
-    function hideshow() {
-    document.getElementById('hidden-div').style.display = 'block';
-    this.style.display = 'none'
-        }
-    </script>
 <?php }

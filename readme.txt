@@ -3,8 +3,8 @@ Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
-Tested up to: 3.9.1
-Stable tag: 8.0.1
+Tested up to: 3.9.2
+Stable tag: 8.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,10 @@ Replace Disqus Comment System with advanced features including lazy load. Commen
 Advanced version of Disqus Comment System (non official). Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
 
 You can decide how, when, where to load comments. This plugin prevents unwanted script loading and make your website super fast.
+
+= Please remove official Disqus plugin before activating this plugin =
+
+This plugin gives all the official plugin features + extra features
 
 Visit <a href="http://www.joelsays.com/plugins/disqus-conditional-load/">Disqus Conditional Load Official Website</a>
 
@@ -74,7 +78,7 @@ To disable Disqus comments auto load on all pages and posts. And lazy loading Di
 
 = Should I use Disqus plugin along with this plugin? =
 
-No. This plugin can be used instead of Disqus.
+No. This plugin can be used instead of Disqus. Please deactivate Disqus official plugin first
 
 = What this doesn't offer when compared to Disqus official plugin? =
 
@@ -108,6 +112,11 @@ Yes. You can.
 4. Moderation Dashboard.
 
 == Changelog ==
+
+= 8.0.2 =
+* Bug fix.
+* Removed some unwanted scripts that caused javascript errors.
+* Hidden default WordPress comments (it was showing without style before Disqus loads)
 
 = 8.0.1 =
 * Support forum added
@@ -157,8 +166,10 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.1 =
-* Support forum added
+= 8.0.2 =
+* Bug fix.
+* Removed some unwanted scripts that caused javascript errors.
+* Hidden default WordPress comments (it was showing without style before Disqus loads)
 
 == Support ==
 
