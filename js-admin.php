@@ -28,9 +28,8 @@
 		$shortcode = get_option('shortcode');
     }
 ?>
-<div class="wrap">
-<table width="100%">
-<tr><td width="70%">
+<div class="wrap" style="padding-top: 1.5cm;">
+<div style="width:70%; float:left;">
     <?php    echo "<h3>" . __( 'Disqus Conditional Load', 'oscimp_trdom' ) . " <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h3>"; ?>
     <form name="oscimp_form" method="post" action="?page=disqus">
 	<?php wp_nonce_field('dsq-wpnonce_js', 'dsq-form_nonce_js'); ?>
@@ -51,18 +50,19 @@
         <button class="button-primary button" type="submit" name="Submit" id="submit"><?php _e('Update Options', 'oscimp_trdom' ) ?></button>
         </p>
     </form>
-</td><td width="30%" align="center">
+</div>
+<div style="width:30%; float:right;" align="center">
 <?php
 $base = is_ssl() ? 'https://' : 'http://';
 $url = get_option('disqus_forum_url');
 if ($url) { $mod_url = $base.$url.'.'.DISQUS_DOMAIN.'/admin/moderate/';}
 else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 ?>
-<h2><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
-</h2><br/><br/><br/><br/><hr/>
+<h3><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
+</h3><br/><br/><br/><br/><hr/>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
 <h4>If you think my plugin is useful, please consider a small donation.</h4>
-<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></td></tr></table></div>
+<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></div></div>
 <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <script type="text/javascript">
 $('#type').change(function(){

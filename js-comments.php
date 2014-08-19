@@ -31,12 +31,12 @@ if($type=='click'){
 $type = get_option('type'); ?>
 
 <?php }
- if (get_comment_pages_count() > 1 && get_option('page_comments')): // Are there comments to navigate through? ?>
+/* if (get_comment_pages_count() > 1 && get_option('page_comments')):?>
             <div class="navigation">
                 <div class="nav-previous"><?php previous_comments_link(dsq_i( '<span class="meta-nav">&larr;</span> Older Comments')); ?></div>
                 <div class="nav-next"><?php next_comments_link(dsq_i('Newer Comments <span class="meta-nav">&rarr;</span>')); ?></div>
             </div> <!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+<?php endif; ?>
 
             <!--<ul id="dsq-comments">
                 <?php
@@ -44,7 +44,7 @@ $type = get_option('type'); ?>
                      * to use dsq_comment() to format the comments.
                      
                     wp_list_comments(array('callback' => 'dsq_comment'));
-					*/
+					
                 ?>
             </ul>-->
 
@@ -53,7 +53,8 @@ $type = get_option('type'); ?>
                 <div class="nav-previous"><?php previous_comments_link(dsq_i( '<span class="meta-nav">&larr;</span> Older Comments')); ?></div>
                 <div class="nav-next"><?php next_comments_link(dsq_i( 'Newer Comments <span class="meta-nav">&rarr;</span>')); ?></div>
             </div><!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+<?php endif; // check for comment navigation 
+*/?>
 
         </div>
 

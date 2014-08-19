@@ -355,8 +355,9 @@ case 0:
 ?>
     <!-- Settings -->
     <div id="dsq-advanced" class="dsq-content dsq-advanced"<?php if (!$show_advanced) echo ' style="display:none;"'; ?>>
-        <h3><?php echo dsq_i('Disqus Settings'); ?> <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h3>
-        <p><?php echo dsq_i('Version: 8.0.0') ?></p>
+	<div class="wrap" style="padding-top: 1.5cm;">
+        <h3><?php echo dsq_i('Disqus Conditional Load'); ?> <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h3>
+        <p><?php echo dsq_i('Version: 8.0.3') ?></p>
         <?php
         if (get_option('disqus_active') == '0') {
             // disqus is not active
@@ -573,4 +574,5 @@ case 0:
         </table>
         <br/>
     </div>
+	</div>
 </div>

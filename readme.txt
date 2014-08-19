@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.2
-Stable tag: 8.0.2
+Stable tag: 8.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,11 @@ Yes. You can.
 
 == Changelog ==
 
+= 8.0.3 =
+* Fixed alignment issues on admin page.
+* Hidden unwanted things from comments template.
+* Improved performance.
+
 = 8.0.2 =
 * Bug fix.
 * Removed some unwanted scripts that caused javascript errors.
@@ -166,10 +171,10 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.2 =
-* Bug fix.
-* Removed some unwanted scripts that caused javascript errors.
-* Hidden default WordPress comments (it was showing without style before Disqus loads)
+= 8.0.3 =
+* Fixed alignment issues on admin page.
+* Hidden unwanted things from comments template.
+* Improved performance.
 
 == Support ==
 
