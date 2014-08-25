@@ -157,7 +157,6 @@ var dsq = document.createElement('script'); dsq.type = 'text/javascript';
 </script>
 <?php }
 if($type=='scroll'){ ?>
-<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 (function() {
