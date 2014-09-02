@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.2
-Stable tag: 8.0.4
+Stable tag: 8.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,7 +53,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Increased exposure and readership
 
 Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
-Visit Plugin Support Forum - <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Joel Says</a>
+Visit - <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Plugin Support Forum</a>
 
 == Installation ==
 
@@ -112,6 +112,10 @@ Yes. You can.
 4. Moderation Dashboard.
 
 == Changelog ==
+
+= 8.0.5 =
+* Fixed conflict issue with some plugins.
+* Improved performance.
 
 = 8.0.4 =
 * Fixed jquery conflict issue.
@@ -178,9 +182,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.4 =
-* Fixed jquery conflict issue.
-* Fixed one bug.
+= 8.0.5 =
+* Fixed conflict issue with some plugins.
 * Improved performance.
 
 == Support ==

@@ -59,29 +59,37 @@ if ($url) { $mod_url = $base.$url.'.'.DISQUS_DOMAIN.'/admin/moderate/';}
 else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 ?>
 <h3><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
-</h3><br/><br/><br/><br/><hr/>
+</h3><br/><hr/>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
-<h4>If you think my plugin is useful, please consider a small donation.</h4>
-<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4></div></div>
-<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+<h4>It takes a lot of my time while developing and giving plugin support for free. Please consider a small donation if you found this plugin useful..</h4>
+<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4>
+<h3><a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Support Forum</a></h4><br/>
+
+<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2FSaysJoel&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1406599162929386" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+<a href="https://twitter.com/JoelSayss" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @JoelSayss</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br/><br/>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/105457272740332174541" data-rel="author"></div>
+</div></div>
+
 <script type="text/javascript">
-$('#type').change(function(){
-    var selected = $(this).val();
-    if (selected == 'scroll') { $('#button_prop').hide(); }
-	if (selected == 'click') { $('#button_prop').show(); }
+jQuery('#type').change(function(){
+    var selected = jQuery(this).val();
+    if (selected == 'scroll') { jQuery('#button_prop').hide(); }
+	if (selected == 'click') { jQuery('#button_prop').show(); }
     //etc ...
 });
-$( document ).ready(function() {
-var bu = $( "#type" ).val();
-if (bu == 'scroll') { $('#button_prop').hide(); }
-if (bu == 'click') { $('#button_prop').show(); }
+jQuery( document ).ready(function() {
+var bu = jQuery( "#type" ).val();
+if (bu == 'scroll') { jQuery('#button_prop').hide(); }
+if (bu == 'click') { jQuery('#button_prop').show(); }
 });
 
-$('#submit').click(function() {
-    $(".help-block").hide();
-    var js_username = $( "#username" ).val();
+jQuery('#submit').click(function() {
+    jQuery(".help-block").hide();
+    var js_username = jQuery( "#username" ).val();
     if(js_username==''){
-        $('#username').after('<p class="help-block"><font color="red">Disqus identification name required !</font></p>');
+        jQuery('#username').after('<p class="help-block"><font color="red">Disqus identification name required !</font></p>');
         return false;
     }
 });
