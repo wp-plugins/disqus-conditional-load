@@ -66,7 +66,7 @@ else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 <h3><a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Support Forum</a></h4><br/>
 
 <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2FSaysJoel&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1406599162929386" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
-<a href="https://twitter.com/JoelSayss" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @JoelSayss</a>
+<a href="https://twitter.com/Joel_James" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Joel_James</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br/><br/>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/105457272740332174541" data-rel="author"></div>

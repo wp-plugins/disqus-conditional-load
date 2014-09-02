@@ -160,13 +160,13 @@ if($type=='scroll'){ ?>
 <script type="text/javascript">
 /* <![CDATA[ */
 (function() {
-var disqus_div = $('#disqus_thread');
+var disqus_div = jQuery('#disqus_thread');
 if (disqus_div.size() > 0 ) {
 var ds_loaded = false,
 top = disqus_div.offset().top,
 disqus_data = disqus_div.data(),
 check = function(){
-if ( !ds_loaded && $(window).scrollTop() + $(window).height() > top ) {
+if ( !ds_loaded && jQuery(window).scrollTop() + jQuery(window).height() > top ) {
 ds_loaded = true;
 for (var key in disqus_data) {
 if (key.substr(0,6) == 'disqus') {
@@ -179,7 +179,7 @@ window['disqus_' + key.replace('disqus','').toLowerCase()] = disqus_data[key];
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }
 };
-$(window).scroll(check);
+jQuery(window).scroll(check);
 check();
 }
 	})();

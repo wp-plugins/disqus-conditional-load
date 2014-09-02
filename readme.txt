@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 3.9.2
-Stable tag: 8.0.5
+Stable tag: 8.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,10 @@ Yes. You can.
 
 == Changelog ==
 
+= 8.0.6 =
+* Fixed one jQuery bug.
+* Removed unwanted jQuery codes.
+
 = 8.0.5 =
 * Fixed conflict issue with some plugins.
 * Improved performance.
@@ -182,9 +186,9 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.5 =
-* Fixed conflict issue with some plugins.
-* Improved performance.
+= 8.0.6 =
+* Fixed one jQuery bug.
+* Removed unwanted jQuery codes.
 
 == Support ==
 
