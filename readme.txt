@@ -1,7 +1,7 @@
 === Disqus Conditional Load ===
 Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
+Donate link: https://secure.payza.com/checkout?BjM/e3ZrdnBjd3NhcmMoPz95eXxnWTZqNkgycWZPTlFESUxrY3NzP2ZrdmV3ZnF0cmFyYwQ=
 Requires at least: 3.0.1
 Tested up to: 4.0
 Stable tag: 8.0.7
