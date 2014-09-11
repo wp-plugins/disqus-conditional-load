@@ -4,7 +4,7 @@
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
 	Description: Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
 	Author: Joel James
-	Version: 8.0.6
+	Version: 8.0.7
 	Author URI: http://www.joelsays.com/about-me/
 	Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 */
@@ -803,11 +803,10 @@ function dsq_comments_template($value) {
     // path, use that instead of the default bundled comments.php
     //return TEMPLATEPATH . '/disqus-comments.php';
     $EMBED = true;
-    return dirname(__FILE__) . '/js-comments.php';
+    return dirname(__FILE__) . '/includes/js-comments.php';
 }
 /*
 // No need of jQuery library as it is already loaded
-
 if(get_option('type')=='scroll'):
 add_action("wp_enqueue_scripts", "js_jquery_enqueue", 11);
 endif;
@@ -926,23 +925,14 @@ else {
         $type = get_option('type');
         if ($type == 'click') {
             $class = get_option('class');
-            $js_div .= "<div id='hidden-div' align='center'><button id='js_comment_div' class='".$class."' onclick='load_disqus();'>".$button."</button></div>
-						<div id='disqus_thread'></div>";
+            $js_div .= "<div id='disqus_thread'><div id='hidden-div' align='center'><button id='js_comment_div' class='".$class."' onclick='load_disqus();'>".$button."</button></div></div>";
         }
 		else if ($type = 'scroll') {
 						$js_div .= "<div id='disqus_thread'></div>";
         }
         return $js_div;
 }
-add_filter('comments_template', 'emptying');
 add_shortcode('js-disqus', 'add_js_disqus_div');
-}
-
-function emptying($file) {
-    if (is_single()) :
-        $file = dirname(__FILE__) . '/empty.php';
-    endif;
-    return $file;
 }
 
 // a little jQuery goodness to get comments menu working as desired
@@ -1010,7 +1000,7 @@ function dsq_manage() {
     if (dsq_does_need_update() && !isset($_POST['reset'])) {
         include_once(dirname(__FILE__) . '/upgrade.php');
     } else {
-        include_once(dirname(__FILE__) . '/js-manage.php');
+        include_once(dirname(__FILE__) . '/includes/js-manage.php');
     }
 }
 
@@ -1391,6 +1381,24 @@ if(!function_exists('cf_json_encode')) {
         }
         return $json_str;
     }
+}
+
+if ( !function_exists('js_check_shortcode') ) {
+
+function js_check_shortcode($shortcode = '') {
+
+global $post;
+$post_obj = get_post( $post->ID );
+$found = false;
+
+if ( !$shortcode )
+return $found;
+if ( stripos( $post_obj->post_content, '[' . $shortcode ) !== false )
+$found = true;
+
+return $found;
+
+}
 }
 
 // Single Sign-on Integration

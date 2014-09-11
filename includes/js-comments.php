@@ -13,9 +13,10 @@ else{
 }
 $type = get_option('type');
 $class = get_option('class');
-if ($shortcode !== 'yes') {
+if((!js_check_shortcode('js-disqus') && $shortcode=='yes') || $shortcode=='no') {
 ?>
 <div id="disqus_thread">
+
 <?php if($type=='click'){ ?>
     <div id='hidden-div' align='center'><button id='js_comment_div' class="<?php echo $class;?>" onclick="load_disqus()"><?php echo $button; ?></button></div>
 <?php }} if (!get_option('disqus_disable_ssr') && have_comments()): ?>
@@ -151,6 +152,7 @@ function load_disqus() {
 var dsq = document.createElement('script'); dsq.type = 'text/javascript';
     dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+	jQuery("#hidden-div").replaceWith("<div align='center'><h4><?php echo get_option('message'); ?></h4></div>");
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 }

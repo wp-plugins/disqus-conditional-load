@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 8.0.6
+Stable tag: 8.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Replace Disqus Comment System with advanced features including lazy load. Commen
 
 == Description ==
 
-Advanced version of Disqus Comment System (non official). Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
+Advanced version of Disqus Comment System. Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
 
 You can decide how, when, where to load comments. This plugin prevents unwanted script loading and make your website super fast.
 
@@ -32,6 +32,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Prevent auto load of Disqus Comments.
 * Choose how to load Disqus comments ( On scroll or on click ).
 * Hide button after comment loads.
+* Show custom message on before loading Disqus
 * Customize button label.
 * Auto-sync (backup) of comments with Disqus and WordPress database
 * Quick <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/">Direct Support</a>.
@@ -106,12 +107,18 @@ Yes. You can.
 
 == Screenshots ==
 
-1. Disqus Comments UI
-2. Conditional Load Settings.
-3. Disqus Comment Settings.
-4. Moderation Dashboard.
+1. Moderation Dashboard
+2. Disqus Comments UI
+3. Conditional Load Settings.
+4. Disqus Comment Settings.
 
 == Changelog ==
+
+= 8.0.7 =
+* Added easy-to-use tabbed admin page.
+* Ability to show normal Disqus comments in SHORTCODE is not found.
+* Custom loading message to show before loading Disqus comments.
+* Improved performance.
 
 = 8.0.6 =
 * Fixed one jQuery bug.
@@ -186,9 +193,11 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.6 =
-* Fixed one jQuery bug.
-* Removed unwanted jQuery codes.
+= 8.0.7 =
+* Added easy-to-use tabbed admin page.
+* Ability to show normal Disqus comments in SHORTCODE is not found.
+* Custom loading message to show before loading Disqus comments.
+* Improved performance.
 
 == Support ==
 
