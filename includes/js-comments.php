@@ -19,7 +19,7 @@ if((!js_check_shortcode('js-disqus') && $shortcode=='yes') || $shortcode=='no') 
 
 <?php if($type=='click'){ ?>
     <div id='hidden-div' align='center'><button id='js_comment_div' class="<?php echo $class;?>" onclick="load_disqus()"><?php echo $button; ?></button></div>
-<?php }} if (!get_option('disqus_disable_ssr') && have_comments()): ?>
+<?php } if (!get_option('disqus_disable_ssr') && have_comments()): ?>
         <?php
         // if (is_file(TEMPLATEPATH . '/comments.php')) {
         //     include(TEMPLATEPATH . '/comments.php');
@@ -61,7 +61,7 @@ $type = get_option('type'); ?>
 
     <?php endif; ?>
 </div>
-
+<?php } ?>
 <script type="text/javascript">
 /* <![CDATA[ */
     var disqus_url = '<?php echo get_permalink(); ?>';
@@ -142,6 +142,22 @@ $type = get_option('type'); ?>
     };
 /* ]]> */
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var hash = window.location.hash;
+if(hash!==''){
+var js_check = true;
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	
+})();}
+/* ]]> */
+</script>
+
 <?php
 $type = get_option('type');
 if($type=='click'){ ?>
@@ -155,6 +171,7 @@ var dsq = document.createElement('script'); dsq.type = 'text/javascript';
 	jQuery("#hidden-div").replaceWith("<div align='center'><h4><?php echo get_option('message'); ?></h4></div>");
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
+/* ]]> */
 }
 </script>
 <?php }
@@ -168,7 +185,7 @@ var ds_loaded = false,
 top = disqus_div.offset().top,
 disqus_data = disqus_div.data(),
 check = function(){
-if ( !ds_loaded && jQuery(window).scrollTop() + jQuery(window).height() > top ) {
+if ( !js_check && !ds_loaded && jQuery(window).scrollTop() + jQuery(window).height() > top ) {
 ds_loaded = true;
 for (var key in disqus_data) {
 if (key.substr(0,6) == 'disqus') {

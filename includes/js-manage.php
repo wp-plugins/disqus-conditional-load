@@ -343,7 +343,7 @@ case 0:
     $url = get_option('disqus_forum_url');
     if ($url) { $mod_url = $base.$url.'.'.DISQUS_DOMAIN.'/admin/moderate/'; }
     else { $mod_url = DISQUS_URL.'admin/moderate/'; }
-
+include_once('js-admin.php');
 ?>       
 <?php } ?>
 
@@ -361,7 +361,6 @@ case 0:
     $dsq_sso_button = get_option('disqus_sso_button');
 ?>
     <!-- Settings -->
-<?php include_once('js-admin.php'); ?>
 <?php include_once('js-advanced.php'); ?>
 </div>
 <script type="text/javascript">

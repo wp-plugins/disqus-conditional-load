@@ -1,10 +1,10 @@
 === Disqus Conditional Load ===
 Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
-Donate link: https://secure.payza.com/checkout?BjM/e3ZrdnBjd3NhcmMoPz95eXxnWTZqNkgycWZPTlFESUxrY3NzP2ZrdmV3ZnF0cmFyYwQ=
+Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 8.0.7
+Stable tag: 8.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,6 +114,12 @@ Yes. You can.
 
 == Changelog ==
 
+= 8.0.8 =
+* Added normal Disqus load when access comment id via url.
+* Modified admin tab.
+* Suggested by - [Ian](http://iag.me/).
+* Fixed alignment issue.
+
 = 8.0.7 =
 * Added easy-to-use tabbed admin page.
 * Ability to show normal Disqus comments in SHORTCODE is not found.
@@ -193,11 +199,11 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.7 =
-* Added easy-to-use tabbed admin page.
-* Ability to show normal Disqus comments in SHORTCODE is not found.
-* Custom loading message to show before loading Disqus comments.
-* Improved performance.
+= 8.0.8 =
+* Added normal Disqus load when access comment id via url.
+* Modified admin tab.
+* Suggested by - [Ian](http://iag.me/).
+* Fixed alignment issue.
 
 == Support ==
 

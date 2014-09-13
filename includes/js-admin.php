@@ -65,7 +65,7 @@ else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 ?>
 <h3><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
 </h3><br/><hr/>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
+<a href="http://www.joelsays.com/donation/" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
 <h4>It takes a lot of my time while developing and giving plugin support for free. Please consider a small donation if you found this plugin useful..</h4>
 <h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4>
 <h3><a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Support Forum</a></h4><br/>
