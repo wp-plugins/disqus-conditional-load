@@ -1,7 +1,7 @@
 <div id="dsq-advanced" class="dsq-content dsq-advanced"<?php if (!$show_advanced) echo ' style="display:none;"'; ?>>
 	<div class="wrap">
         <h3><?php echo dsq_i('Disqus Conditional Load'); ?> <a href='http://www.joelsays.com/plugins/disqus-conditional-load/' target='_blank'>Plugin Website</a></h3>
-        <?php echo dsq_i('<h4>Version: 8.0.8</h4>') ?>
+        <?php echo dsq_i('<h4>Version: 8.0.9</h4>') ?>
         <?php
         if (get_option('disqus_active') == '0') {
             // disqus is not active

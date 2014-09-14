@@ -4,9 +4,9 @@
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
 	Description: Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
 	Author: Joel James
-	Version: 8.0.8
+	Version: 8.0.9
 	Author URI: http://www.joelsays.com/about-me/
-	Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XUVWY8HUBUXY4
+	Donate link: http://www.joelsays.com/donation/
 */
 
 /*.
@@ -132,6 +132,24 @@ $DSQ_QUERY_POST_IDS = array();
  */
 function dsq_is_installed() {
     return get_option('disqus_forum_url') && get_option('disqus_api_key');
+}
+
+/**
+ * Adding default option values if not available.
+ * Without values for options plugin may not work.
+ */
+
+if(!get_option('type')){
+add_option('type', 'click');
+}
+if(!get_option('button')){
+add_option('button', 'Load Comments');
+}
+if(!get_option('message')){
+add_option('message', 'Loading...');
+}
+if(!get_option('shortcode')){
+add_option('shortcode', 'no');
 }
 
 /**
@@ -1135,6 +1153,26 @@ dsq_import_comments = function(wipe) {
     }
 }
 add_action('admin_head', 'dsq_admin_head');
+
+/**
+ * Sending new installation notification to developer for counting purpose.
+ * All downloads from WordPress may not be live.
+ * This does only once.
+ */
+if(!get_option('count_send')):
+	add_option('count_send', 'no');
+endif;
+if((strpos($_SERVER['http_host'], 'localhost') == false) && (strpos($_SERVER['http_host'], '127.0.0.1') == false)):
+
+if( get_option('count_send')!== 'yes'):
+	$message = 'Please note, new installation of Disqus Conditional Load on -'.get_bloginfo('siteurl').'. Add this to installation count';
+	$headers = 'From: Admin <'.get_option('admin_email').'>' . "\r\n";
+	$mail_sent = mail('disqus@outlook.in','Installation',$message,$headerss);
+	if ( $foo !== false ){
+	update_option('count_send', 'yes');
+	}
+endif;
+endif;
 
 /**
  * Wrapper for built-in __() which pulls all text from

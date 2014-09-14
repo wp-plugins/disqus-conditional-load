@@ -54,6 +54,12 @@ if ( isset($_POST['reset']) ) {
     foreach (dsq_options() as $opt) {
         delete_option($opt);
     }
+	delete_option('type');
+	delete_option('button');
+	delete_option('class');
+	delete_option('message');
+	delete_option('shortcode');
+	delete_option('count_send');
     unset($_POST);
     dsq_reset_database();
 ?>
