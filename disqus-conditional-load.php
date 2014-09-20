@@ -4,7 +4,7 @@
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
 	Description: Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
 	Author: Joel James
-	Version: 8.0.9
+	Version: 9.0.0
 	Author URI: http://www.joelsays.com/about-me/
 	Donate link: http://www.joelsays.com/donation/
 */
@@ -1158,7 +1158,7 @@ add_action('admin_head', 'dsq_admin_head');
  * Sending new installation notification to developer for counting purpose.
  * All downloads from WordPress may not be live.
  * This does only once.
- */
+ * Update :  Removed this since it shows errors for some users.
 if(!get_option('count_send')):
 	add_option('count_send', 'no');
 endif;
@@ -1173,7 +1173,7 @@ if( get_option('count_send')!== 'yes'):
 	}
 endif;
 endif;
-
+*/
 /**
  * Wrapper for built-in __() which pulls all text from
  * the disqus domain and supports variable interpolation.

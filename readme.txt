@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 8.0.9
+Stable tag: 9.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,8 @@ Replace Disqus Comment System with advanced features including lazy load. Commen
 == Description ==
 
 Advanced version of Disqus Comment System. Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
+
+= Woocommerce support coming soon!! =
 
 You can decide how, when, where to load comments. This plugin prevents unwanted script loading and make your website super fast.
 
@@ -115,6 +117,9 @@ Yes. You can.
 4. Disqus Comment Settings.
 
 == Changelog ==
+
+= 9.0.0 =
+* Fixed one serious issue regarding count notification.
 
 = 8.0.9 =
 * Small bug fix on default values.

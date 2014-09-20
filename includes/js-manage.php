@@ -59,7 +59,6 @@ if ( isset($_POST['reset']) ) {
 	delete_option('class');
 	delete_option('message');
 	delete_option('shortcode');
-	delete_option('count_send');
     unset($_POST);
     dsq_reset_database();
 ?>
