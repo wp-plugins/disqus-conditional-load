@@ -5,19 +5,18 @@ if (DISQUS_DEBUG) {
 
 $shortcode = get_option('shortcode');
 $button_label = get_option('button');
-if($button_label==''){
+$type = get_option('type');
+if($button_label == ''){
    $button = 'Load Comments'; 
 }
 else{
     $button = $button_label; 
 }
-$type = get_option('type');
 $class = get_option('class');
-if((!js_check_shortcode('js-disqus') && $shortcode=='yes') || $shortcode=='no') {
+if((!js_check_shortcode('js-disqus') && $shortcode == 'yes') || $shortcode == 'no') {
 ?>
 <div id="disqus_thread">
-
-<?php if($type=='click'){ ?>
+<?php if($type == 'click'){ ?>
     <div id='hidden-div' align='center'><button id='js_comment_div' class="<?php echo $class;?>" onclick="load_disqus()"><?php echo $button; ?></button></div>
 <?php } if (!get_option('disqus_disable_ssr') && have_comments()): ?>
         <?php
@@ -25,39 +24,7 @@ if((!js_check_shortcode('js-disqus') && $shortcode=='yes') || $shortcode=='no') 
         //     include(TEMPLATEPATH . '/comments.php');
         // }
         ?>
-        <div id="dsq-content">
-<?php
-$type = get_option('type');
-if($type=='click'){
-$type = get_option('type'); ?>
-
-<?php }
-/* if (get_comment_pages_count() > 1 && get_option('page_comments')):?>
-            <div class="navigation">
-                <div class="nav-previous"><?php previous_comments_link(dsq_i( '<span class="meta-nav">&larr;</span> Older Comments')); ?></div>
-                <div class="nav-next"><?php next_comments_link(dsq_i('Newer Comments <span class="meta-nav">&rarr;</span>')); ?></div>
-            </div> <!-- .navigation -->
-<?php endif; ?>
-
-            <!--<ul id="dsq-comments">
-                <?php
-                    /* Loop through and list the comments. Tell wp_list_comments()
-                     * to use dsq_comment() to format the comments.
-                     
-                    wp_list_comments(array('callback' => 'dsq_comment'));
-					
-                ?>
-            </ul>-->
-
-<?php if (get_comment_pages_count() > 1 && get_option('page_comments')): // Are there comments to navigate through? ?>
-            <div class="navigation">
-                <div class="nav-previous"><?php previous_comments_link(dsq_i( '<span class="meta-nav">&larr;</span> Older Comments')); ?></div>
-                <div class="nav-next"><?php next_comments_link(dsq_i( 'Newer Comments <span class="meta-nav">&rarr;</span>')); ?></div>
-            </div><!-- .navigation -->
-<?php endif; // check for comment navigation 
-*/?>
-
-        </div>
+        <div id="dsq-content"></div>
 
     <?php endif; ?>
 </div>
@@ -157,10 +124,21 @@ var js_check = true;
 })();}
 /* ]]> */
 </script>
-
 <?php
-$type = get_option('type');
-if($type=='click'){ ?>
+if($type == 'normal'){ ?>
+<script>
+/* <![CDATA[ */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+	jQuery("#hidden-div").replaceWith("<div align='center'><h4><?php echo get_option('message'); ?></h4></div>");
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+<?php }
+if($type == 'click'){ ?>
 <script>
 function load_disqus() {
 /* <![CDATA[ */
@@ -175,7 +153,7 @@ var dsq = document.createElement('script'); dsq.type = 'text/javascript';
 }
 </script>
 <?php }
-if($type=='scroll'){ ?>
+if($type == 'scroll'){ ?>
 <script type="text/javascript">
 /* <![CDATA[ */
 (function() {

@@ -4,7 +4,7 @@
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
 	Description: Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
 	Author: Joel James
-	Version: 9.0.0
+	Version: 9.0.1
 	Author URI: http://www.joelsays.com/about-me/
 	Donate link: http://www.joelsays.com/donation/
 */

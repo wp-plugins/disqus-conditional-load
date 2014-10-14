@@ -1,10 +1,10 @@
 === Disqus Conditional Load ===
-Contributors: joelcj91
+Contributors: joelcj91,joelsays
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 9.0.0
+Stable tag: 9.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,11 @@ Replace Disqus Comment System with advanced features including lazy load. Commen
 
 Advanced version of Disqus Comment System. Use Disqus comment system in your website with more advanced features like lazy loading and SHORTCODE.
 
-= Woocommerce support coming soon!! =
+= Pro Version is coming soon!! =
+
+DCL Pro version is coming soon with much more features like WooCommerce support, Comments on Widgets and Sidebars, Stylish Inbuilt Comment Buttons, Comments count on button etc.
+
+<a href="http://www.joelsays.com/contact-me/">Pre order DCL Pro version now</a>. Now payment required. Just fill the contact form and let me know. Will be in touch with you on Pro release.!!
 
 You can decide how, when, where to load comments. This plugin prevents unwanted script loading and make your website super fast.
 
@@ -36,6 +40,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Hide button after comment loads.
 * Show custom message on before loading Disqus
 * Customize button label.
+* Ability to disable lazy load.
 * Auto-sync (backup) of comments with Disqus and WordPress database
 * Quick <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/">Direct Support</a>.
 * Uses the Disqus API
@@ -55,7 +60,7 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Connected with a large discussion community
 * Increased exposure and readership
 
-* WoCommerce Support (Coming soon!!)
+* Pro version (Coming soon!!)
 
 Please contact Joel James (developer) using <a href="http://www.joelsays.com/contact-me/" target="_blank">this form </a>if you have any issues.
 Visit - <a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Plugin Support Forum</a>
@@ -117,6 +122,11 @@ Yes. You can.
 4. Disqus Comment Settings.
 
 == Changelog ==
+
+= 9.0.1 =
+* Fixed few bugs.
+* Added ability to disable lazy load (But shortcode can be used)
+* Removed old version jQuery
 
 = 9.0.0 =
 * Fixed one serious issue regarding count notification.
@@ -210,9 +220,10 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 8.0.9 =
-* Small bug fix on default values.
-* Performance improved.
+= 9.0.1 =
+* Fixed few bugs.
+* Added ability to disable lazy load (But shortcode can be used)
+* Removed old version jQuery
 
 == Support ==
 

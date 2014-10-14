@@ -39,8 +39,12 @@
 	<?php wp_nonce_field('dsq-wpnonce_js', 'dsq-form_nonce_js'); ?>
         <input type="hidden" name="js_hidden" value="Y">
         <?php    echo "<h4>" . __( 'Disqus Load Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-        <p><?php _e("Load Disqus when : " ); ?><select name='type' id='type'><option value='click' <?php if($type=='click'){echo 'selected';}?>>On Click</option><option value='scroll' <?php if($type=='scroll'){echo 'selected';}?>>On Scroll</option></select></p>
-		<p>This option will prevent Disqus from automatically loading comments and scripts on pages or posts.</p>
+        <p><?php _e("Load Disqus when : " ); ?><select name='type' id='type'><option value='click' <?php if($type == 'click'){echo 'selected';}?>>On Click</option>
+																			<option value='scroll' <?php if($type == 'scroll'){echo 'selected';}?>>On Scroll</option>
+																			<option value='normal' <?php if($type == 'normal'){echo 'selected';}?>>Normal - Disable Lazy Load</option>
+												</select></p>
+		<p>This option will prevent Disqus from automatically loading comments and scripts on pages or posts. If you choose "Normal" comments will be loaded normally and no lazy load effect will be there.
+		Shortcode will work on all these options.</p>
 		<hr />
 		<div id='button_prop'><?php echo "<h4>" . __( 'Button Settings', 'oscimp_trdom' ) . "</h4>"; ?>
         <p><?php _e("Button Name : " ); ?><input type="text" name="button" value="<?php echo $button; ?>" size="20"></p>
@@ -65,8 +69,10 @@ else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 ?>
 <h3><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
 </h3><br/><hr/>
+<h4><a href="http://www.joelsays.com/contact-me/" target="_blank">Pre Order Pro Version For FREE!!</a></h4>
+<p>New DCL Pro version is coming soon with much more features like <strong>Woocommerce support, Comment on Widgets, Pre defined stylish buttons etc..</strong> Pre order now to get pro version with 50% discount. No payment required.</p><hr/>
 <a href="http://www.joelsays.com/donation/" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
-<h4>It takes a lot of my time while developing and giving plugin support for free. Please consider a small donation if you found this plugin useful..</h4>
+
 <h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4>
 <h3><a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Support Forum</a></h4><br/>
 
@@ -76,26 +82,18 @@ else { $mod_url = DISQUS_URL.'admin/moderate/'; }
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/105457272740332174541" data-rel="author"></div>
 </div></div>
-</div></div>
+</div>
 <script type="text/javascript">
-jQuery('#type').change(function(){
-    var selected = jQuery(this).val();
-    if (selected == 'scroll') { jQuery('#button_prop').hide(); }
-	if (selected == 'click') { jQuery('#button_prop').show(); }
-    //etc ...
-});
-jQuery( document ).ready(function() {
-var bu = jQuery( "#type" ).val();
-if (bu == 'scroll') { jQuery('#button_prop').hide(); }
-if (bu == 'click') { jQuery('#button_prop').show(); }
-});
-
-jQuery('#submit').click(function() {
-    jQuery(".help-block").hide();
-    var js_username = jQuery( "#username" ).val();
-    if(js_username==''){
-        jQuery('#username').after('<p class="help-block"><font color="red">Disqus identification name required !</font></p>');
-        return false;
-    }
-});
+	jQuery('#type').change(function(){
+		var selected = jQuery(this).val();
+		if (selected == 'scroll') { jQuery('#button_prop').hide(); }
+		if (selected == 'normal') { jQuery('#button_prop').hide(); }
+		if (selected == 'click') { jQuery('#button_prop').show(); }
+	});
+	jQuery( document ).ready(function() {
+		var bu = jQuery( "#type" ).val();
+		if (bu == 'scroll') { jQuery('#button_prop').hide(); }
+		if (bu == 'normal') { jQuery('#button_prop').hide(); }
+		if (bu == 'click') { jQuery('#button_prop').show(); }
+	});
 </script>
