@@ -1,99 +1,99 @@
-<?php
+<?php defined('ABSPATH') or die("Crap ! You can not access this directly."); ?>
+<div id="jspro" class="wrap jspro-settings">
+
+	<h2> <?php _e( 'Disqus Conditional Load' ); ?>: <?php _e( 'Advanced Settings'); ?></h2>
+
+	<div id="jspro-content">
+	<?php
 /*
 * Admin setting form
 * Using post values
 */
 	// Checking for post value - Suggested by Jeff Behnke
+	
     if( isset($_POST['js_hidden']) && $_POST['js_hidden'] == 'Y' ) {
-        $type = $_POST['type'];
-        update_option('type', $type);
+        $js_type = $_POST['js_type'];
+        update_option('js_type', $js_type);
 		
-		$button = $_POST['button'];
-        update_option('button', $button);
+		$js_button = $_POST['js_button'];
+        update_option('js_button', $js_button);
         
-        $class = $_POST['class'];
-        update_option('class', $class);
+        $js_class = $_POST['js_class'];
+        update_option('js_class', $js_class);
 		
-		$message = $_POST['message'];
-        update_option('message', $message);
+		$js_message = $_POST['js_message'];
+        update_option('js_message', $js_message);
 		
-		$shortcode = $_POST['shortcode'];
-        update_option('shortcode', $shortcode);
+		$js_shortcode = $_POST['js_shortcode'];
+        update_option('js_shortcode', $js_shortcode);
+		
+		$js_count_disable = $_POST['js_count_disable'];
+        update_option('js_count_disable', $js_count_disable);
          
         ?>
         
         <?php
     } else {
-        $type = get_option('type');
-		$button = get_option('button');
-        $class = get_option('class');
-		$message = get_option('message');
-		$shortcode = get_option('shortcode');
+        $js_type = get_option('js_type');
+		$js_button = get_option('js_button');
+        $js_class = get_option('js_class');
+		$js_message = get_option('js_message');
+		$js_shortcode = get_option('js_shortcode');
+		$js_count_disable = get_option('js_count_disable');
     }
 ?>
-<div class="dsq-main"<?php if ($show_advanced) echo ' style="display:none;"'; ?>>
-<div class="wrap">
-<div style="width:70%; float:left;">
-    <?php    echo "<h3>" . __( 'Disqus Conditional Load', 'oscimp_trdom' ) . " <a href='http://www.joelsays.com/disqus-conditional-load' target='_blank'>Plugin Website</a></h3>"; ?>
-    <form name="oscimp_form" method="post" action="?page=disqus">
+    <form name="oscimp_form" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 	<?php wp_nonce_field('dsq-wpnonce_js', 'dsq-form_nonce_js'); ?>
         <input type="hidden" name="js_hidden" value="Y">
         <?php    echo "<h4>" . __( 'Disqus Load Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-        <p><?php _e("Load Disqus when : " ); ?><select name='type' id='type'><option value='click' <?php if($type == 'click'){echo 'selected';}?>>On Click</option>
-																			<option value='scroll' <?php if($type == 'scroll'){echo 'selected';}?>>On Scroll</option>
-																			<option value='normal' <?php if($type == 'normal'){echo 'selected';}?>>Normal - Disable Lazy Load</option>
+        <p><?php _e("Load Disqus when : " ); ?><select name='js_type' id='js_type'><option value='click' <?php if($js_type == 'click'){echo 'selected';}?>>On Click</option>
+																			<option value='scroll' <?php if($js_type == 'scroll'){echo 'selected';}?>>On Scroll</option>
+																			<option value='normal' <?php if($js_type == 'normal'){echo 'selected';}?>>Normal - Disable Lazy Load</option>
 												</select></p>
 		<p>This option will prevent Disqus from automatically loading comments and scripts on pages or posts. If you choose "Normal" comments will be loaded normally and no lazy load effect will be there.
 		Shortcode will work on all these options.</p>
+		<p><?php _e("Disable Default Disqus Count Script Loading : " ); ?>
+		<select name='js_count_disable' id='js_count_disable'><option value='no' <?php if($js_count_disable == 'no'){echo 'selected';}?>>No</option>
+																			<option value='yes' <?php if($js_count_disable == 'yes'){echo 'selected';}?>>Yes</option>
+		</select></p>
+		<p>By default Disqus may load a script (count.js) to get the comments count to show somewhere on your pages. If you want to disable loading that script enable this feature. Enabling this feature can improve page loading speed.
 		<hr />
 		<div id='button_prop'><?php echo "<h4>" . __( 'Button Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-        <p><?php _e("Button Name : " ); ?><input type="text" name="button" value="<?php echo $button; ?>" size="20"></p>
-        <p><?php _e("Button Class : " ); ?><input type="text" name="class" value="<?php echo $class; ?>" size="20"><br/>
+        <p><?php _e("Button Name : " ); ?><input type="text" name="js_button" value="<?php echo $js_button; ?>" size="20"></p>
+        <p><?php _e("Button Class : " ); ?><input type="text" name="js_class" value="<?php echo $js_class; ?>" size="20"><br/>
         By using custom class you can use your own style for comment button. Leave empty if you don't want.</p>	
-		<p><?php _e("Loading Comments Message : " ); ?><input type="text" name="message" value="<?php echo $message; ?>" size="25"></p>
+		<p><?php _e("Loading Comments Message : " ); ?><input type="text" name="js_message" value="<?php echo $js_message; ?>" size="25"></p>
 		<hr /></div>
 		<?php    echo "<h4>" . __( 'ShortCode Settings', 'oscimp_trdom' ) . "</h4>"; ?>
-                <p><?php _e("Enable <b>Short Code</b> : " ); ?><select name='shortcode'><option value='no' <?php if($shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($shortcode=='yes'){echo 'selected';}?>>Yes</option></select><br/>
+                <p><?php _e("Enable <b>Short Code</b> : " ); ?><select name='js_shortcode'><option value='no' <?php if($js_shortcode=='no'){echo 'selected';}?>>No</option><option value='yes' <?php if($js_shortcode=='yes'){echo 'selected';}?>>Yes</option></select><br/>
                     Please note that if you enable this comments will be loaded where the shortcode <b>[js-disqus]</b> placed. If shortcode not found Disqus comments will be loaded normally.</p>
         <p class="submit">
         <button class="button-primary button" type="submit" name="Submit" id="submit"><?php _e('Update Options', 'oscimp_trdom' ) ?></button>
         </p>
     </form>
-</div>
-<div style="width:30%; float:right;" align="center">
-<?php
-$base = is_ssl() ? 'https://' : 'http://';
-$url = get_option('disqus_forum_url');
-if ($url) { $mod_url = $base.$url.'.'.DISQUS_DOMAIN.'/admin/moderate/';}
-else { $mod_url = DISQUS_URL.'admin/moderate/'; }
-?>
-<h3><a href="<?php echo $mod_url;?>" target="_blank"><strong>Moderate Comments</strong></a>
-</h3><br/><hr/>
-<h4><a href="http://www.joelsays.com/contact-me/" target="_blank">Pre Order Pro Version For FREE!!</a></h4>
-<p>New DCL Pro version is coming soon with much more features like <strong>Woocommerce support, Comment on Widgets, Pre defined stylish buttons etc..</strong> Pre order now to get pro version with 50% discount. No payment required.</p><hr/>
-<a href="http://www.joelsays.com/donation/" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"></a><br/>
-
-<h3>Feel free to <a href="http://www.joelsays.com/contact-me" target="_blank">Contact Me </a>if you have any doubts or feedback</h4>
-<h3><a href="http://www.joelsays.com/members-area/support/plugin-support-disqus-conditional-load/" target="_blank">Support Forum</a></h4><br/>
-
-<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2FSaysJoel&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1406599162929386" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
-<a href="https://twitter.com/Joel_James" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Joel_James</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br/><br/>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/105457272740332174541" data-rel="author"></div>
-</div></div>
-</div>
 <script type="text/javascript">
-	jQuery('#type').change(function(){
+	jQuery('#js_type').change(function(){
 		var selected = jQuery(this).val();
 		if (selected == 'scroll') { jQuery('#button_prop').hide(); }
 		if (selected == 'normal') { jQuery('#button_prop').hide(); }
 		if (selected == 'click') { jQuery('#button_prop').show(); }
 	});
 	jQuery( document ).ready(function() {
-		var bu = jQuery( "#type" ).val();
+		var bu = jQuery( "#js_type" ).val();
 		if (bu == 'scroll') { jQuery('#button_prop').hide(); }
 		if (bu == 'normal') { jQuery('#button_prop').hide(); }
 		if (bu == 'click') { jQuery('#button_prop').show(); }
 	});
 </script>
+	
+	<?php include 'parts/js-footer.php'; ?>
+</div>
+
+
+
+<div id="jspro-sidebar">
+	<?php include 'parts/js-sidebar.php'; ?>
+</div>
+
+</div>
+

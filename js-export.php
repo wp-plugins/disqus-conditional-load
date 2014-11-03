@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') or die("Crap ! You can not access this directly."); ?>
 <?php
 /**
  * Adapted from WordPress 2.8

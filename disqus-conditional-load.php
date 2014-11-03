@@ -2,9 +2,9 @@
 /*
 	Plugin Name: Disqus Conditional Load
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
-	Description: Replace Disqus Comment System with advanced features including lazy load. Comments and Scripts loads only when needed.
+	Description: Use Disqus commenting system with plenty of advanced featured like lazy load, woocommerce support, counts etc.
 	Author: Joel James
-	Version: 9.0.1
+	Version: 9.0.2
 	Author URI: http://www.joelsays.com/about-me/
 	Donate link: http://www.joelsays.com/donation/
 */
@@ -15,7 +15,10 @@
     require_module 'mysql';
 .*/
 
+defined('ABSPATH') or die("Crap ! You can not access this directly.");
+
 require_once(dirname(__FILE__) . '/lib/wp-api.php');
+require_once(dirname(__FILE__) . '/includes/functions/js-functions.php');
 
 if (defined('DISQUS_LOCAL')) { // DISQUS defines this for local development purposes
     define('DISQUS_DOMAIN',         'dev.disqus.org:8000');
@@ -134,23 +137,6 @@ function dsq_is_installed() {
     return get_option('disqus_forum_url') && get_option('disqus_api_key');
 }
 
-/**
- * Adding default option values if not available.
- * Without values for options plugin may not work.
- */
-
-if(!get_option('type')){
-add_option('type', 'click');
-}
-if(!get_option('button')){
-add_option('button', 'Load Comments');
-}
-if(!get_option('message')){
-add_option('message', 'Loading...');
-}
-if(!get_option('shortcode')){
-add_option('shortcode', 'no');
-}
 
 /**
  * @return bool
@@ -823,18 +809,7 @@ function dsq_comments_template($value) {
     $EMBED = true;
     return dirname(__FILE__) . '/includes/js-comments.php';
 }
-/*
-// No need of jQuery library as it is already loaded
-if(get_option('type')=='scroll'):
-add_action("wp_enqueue_scripts", "js_jquery_enqueue", 11);
-endif;
 
-function js_jquery_enqueue() {
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
-   wp_enqueue_script('jquery');
-}
-*/
 function dsq_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
     switch ($comment->comment_type):
@@ -920,38 +895,17 @@ add_filter('comments_open', 'dsq_comments_open');
 
 // Always add Disqus management page to the admin menu
 function dsq_add_pages() {
-     add_submenu_page(
-         'edit-comments.php',
-         'Conditional Load - Disqus',
-         'Conditional Load - Disqus',
-         'moderate_comments',
-         'disqus',
-         'dsq_manage'
-     );
+		add_menu_page('Disqus Settings', 'Disqus Settings', 'moderate_comments', 'disqus', 'dsq_manage', plugin_dir_url(__FILE__) . 'media/images/js-icon.png');
 }
-add_action('admin_menu', 'dsq_add_pages', 10);
-$shortcode = get_option('shortcode');
-if ($shortcode == 'yes') {
-    
-    function add_js_disqus_div($js_div) {
-	if (get_option('button')) {
-    $button = get_option('button');
-	}
-else {
-    $button = 'Load Comments';
-	}
-        $type = get_option('type');
-        if ($type == 'click') {
-            $class = get_option('class');
-            $js_div .= "<div id='disqus_thread'><div id='hidden-div' align='center'><button id='js_comment_div' class='".$class."' onclick='load_disqus();'>".$button."</button></div></div>";
-        }
-		else if ($type = 'scroll') {
-						$js_div .= "<div id='disqus_thread'></div>";
-        }
-        return $js_div;
+add_action('admin_menu', 'dsq_add_pages',5);
+
+
+$js_shortcode = get_option('js_shortcode');
+if ($js_shortcode == 'yes') {
+
+	add_shortcode('js-disqus', 'add_js_disqus_div');
 }
-add_shortcode('js-disqus', 'add_js_disqus_div');
-}
+
 
 // a little jQuery goodness to get comments menu working as desired
 function dsq_menu_admin_head() {
@@ -1026,6 +980,7 @@ function dsq_admin_head() {
     if (isset($_GET['page']) && $_GET['page'] == 'disqus') {
 ?>
 <link rel='stylesheet' href='<?php echo plugins_url( 'media/styles/manage.css', __FILE__ ); ?>' type='text/css' />
+<link rel='stylesheet' href='<?php echo plugins_url( 'media/styles/buttons.css', __FILE__ ); ?>' type='text/css' />
 <style type="text/css">
 .dsq-importing, .dsq-imported, .dsq-import-fail, .dsq-exporting, .dsq-exported, .dsq-export-fail {
     background: url(<?php echo admin_url('images/loading.gif'); ?>) left center no-repeat;
@@ -1245,6 +1200,7 @@ function dsq_output_loop_comment_js($post_ids = null) {
     $_HAS_COUNTS = true;
     if (count($post_ids)) {
 ?>
+<?php if(get_option('js_count_disable') == 'no'){ ?>
     <script type="text/javascript">
     // <![CDATA[
         var disqus_shortname = '<?php echo strtolower(get_option('disqus_forum_url')); ?>';
@@ -1267,13 +1223,14 @@ function dsq_output_loop_comment_js($post_ids = null) {
     //]]>
     </script>
 <?php
-    }
+   } }
 }
 
 function dsq_output_footer_comment_js() {
     if (!dsq_can_replace()) return;
     if (get_option('disqus_cc_fix') != '1') return;
 ?>
+<?php if(get_option('js_count_disable') == 'yes'){ ?>
     <script type="text/javascript">
     // <![CDATA[
         var disqus_shortname = '<?php echo strtolower(get_option('disqus_forum_url')); ?>';
@@ -1296,7 +1253,7 @@ function dsq_output_footer_comment_js() {
     //]]>
     </script>
 <?php
-}
+} }
 add_action('wp_footer', 'dsq_output_footer_comment_js');
 
 // UPDATE DSQ when a permalink changes
@@ -1423,15 +1380,15 @@ if(!function_exists('cf_json_encode')) {
 
 if ( !function_exists('js_check_shortcode') ) {
 
-function js_check_shortcode($shortcode = '') {
+function js_check_shortcode($js_shortcode = '') {
 
 global $post;
 $post_obj = get_post( $post->ID );
 $found = false;
 
-if ( !$shortcode )
+if ( !$js_shortcode )
 return $found;
-if ( stripos( $post_obj->post_content, '[' . $shortcode ) !== false )
+if ( stripos( $post_obj->post_content, '[' . $js_shortcode ) !== false )
 $found = true;
 
 return $found;
@@ -1576,6 +1533,8 @@ function dsq_install($allow_database_install=true) {
     update_option('disqus_version', DISQUS_VERSION);
 }
 
+
+
 /**
  * Adds a simple WordPress pointer to Comments menu, to remind the user to configure the plugin
  */
@@ -1669,5 +1628,44 @@ function dsq_pre_comment_on_post($comment_post_ID) {
     return $comment_post_ID;
 }
 add_action('pre_comment_on_post', 'dsq_pre_comment_on_post');
+
+	/**
+	* Adding new sub menus to main menu tab
+	* Main menu is added above
+	*/
+
+	add_action('admin_menu', 'js_advanced_menu');
+	add_action('admin_menu', 'js_more_menu');
+
+	function js_advanced_menu() {
+		add_submenu_page( 'disqus', 'Advanced Features', 'Advanced Features', 'manage_options', 'js-advanced', 'js_advanced' ); 
+	}
+	function js_more_menu() {
+		add_submenu_page( 'disqus', 'Pro Features', 'Pro Features', 'manage_options', 'js-more', 'js_more' ); 
+	}
+	/**
+	* Calling and including files for each sub menus
+	* adding include oncle to prevent adding these file twice some where else.
+	*/
+	function js_advanced() {
+
+		include_once( dirname(__FILE__) . '/includes/js-admin.php');
+
+	}
+	function js_more() {
+		include_once( dirname(__FILE__) . '/includes/js-more.php');
+
+	}
+
+	/**
+	* Loading required styles
+	* Loads only to admin pages since we do not need them on frontend
+	* @param admin_init
+	*/
+	add_action( 'admin_init', 'load_js_admin_styles' );
+
+	function load_js_admin_styles() {
+		wp_enqueue_style( 'jspro', plugins_url('includes/parts/css/jspro.css', __FILE__));
+	}
 
 ?>

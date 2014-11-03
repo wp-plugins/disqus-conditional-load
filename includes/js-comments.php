@@ -1,29 +1,20 @@
 <?php
+defined('ABSPATH') or die("Crap ! You can not access this directly.");
+
 if (DISQUS_DEBUG) {
     echo "<p><strong>Disqus Debug</strong> thread_id: ".get_post_meta($post->ID, 'dsq_thread_id', true)."</p>";
 }
 
-$shortcode = get_option('shortcode');
-$button_label = get_option('button');
-$type = get_option('type');
-if($button_label == ''){
-   $button = 'Load Comments'; 
-}
-else{
-    $button = $button_label; 
-}
-$class = get_option('class');
-if((!js_check_shortcode('js-disqus') && $shortcode == 'yes') || $shortcode == 'no') {
+require_once( dirname(__FILE__) . '/functions/js-options.php' );
+
+	if((!js_check_shortcode('js-disqus') && $js_shortcode == 'yes') || $js_shortcode == 'no') {
 ?>
 <div id="disqus_thread">
-<?php if($type == 'click'){ ?>
-    <div id='hidden-div' align='center'><button id='js_comment_div' class="<?php echo $class;?>" onclick="load_disqus()"><?php echo $button; ?></button></div>
+<?php if($js_type == 'click'){ ?>
+    <div id='hidden-div' align='center'>
+	<button id='js_comment_div' class="<?php echo $js_class; ?>" style="margin-bottom:20px;"><?php echo $js_button; ?></button>
+	</div>
 <?php } if (!get_option('disqus_disable_ssr') && have_comments()): ?>
-        <?php
-        // if (is_file(TEMPLATEPATH . '/comments.php')) {
-        //     include(TEMPLATEPATH . '/comments.php');
-        // }
-        ?>
         <div id="dsq-content"></div>
 
     <?php endif; ?>
@@ -110,76 +101,21 @@ if((!js_check_shortcode('js-disqus') && $shortcode == 'yes') || $shortcode == 'n
 /* ]]> */
 </script>
 
-<script type="text/javascript">
-/* <![CDATA[ */
-var hash = window.location.hash;
-if(hash!==''){
-var js_check = true;
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	
-})();}
-/* ]]> */
-</script>
 <?php
-if($type == 'normal'){ ?>
-<script>
-/* <![CDATA[ */
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
-	jQuery("#hidden-div").replaceWith("<div align='center'><h4><?php echo get_option('message'); ?></h4></div>");
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-/* ]]> */
-</script>
-<?php }
-if($type == 'click'){ ?>
-<script>
-function load_disqus() {
-/* <![CDATA[ */
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
-	jQuery("#hidden-div").replaceWith("<div align='center'><h4><?php echo get_option('message'); ?></h4></div>");
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-/* ]]> */
-}
-</script>
-<?php }
-if($type == 'scroll'){ ?>
+if($js_type == 'normal'){ ?>
 <script type="text/javascript">
 /* <![CDATA[ */
 (function() {
-var disqus_div = jQuery('#disqus_thread');
-if (disqus_div.size() > 0 ) {
-var ds_loaded = false,
-top = disqus_div.offset().top,
-disqus_data = disqus_div.data(),
-check = function(){
-if ( !js_check && !ds_loaded && jQuery(window).scrollTop() + jQuery(window).height() > top ) {
-ds_loaded = true;
-for (var key in disqus_data) {
-if (key.substr(0,6) == 'disqus') {
-window['disqus_' + key.replace('disqus','').toLowerCase()] = disqus_data[key];
-}
-}
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+	var disqus_shortname = '<?php echo strtolower(get_option('disqus_forum_url')); ?>';
     dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}
-};
-jQuery(window).scroll(check);
-check();
-}
-	})();
+})();
 /* ]]> */
 </script>
 <?php }
+else
+{
+echo js_disqus_conditional_code();
+}

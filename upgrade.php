@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') or die("Crap ! You can not access this directly."); ?>
 <?php
 require(ABSPATH . 'wp-includes/version.php');
 
