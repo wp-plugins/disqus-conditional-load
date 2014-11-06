@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 9.0.2
+Stable tag: 9.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,10 +129,15 @@ Yes. You can.
 
 1. Moderation Dashboard
 2. Disqus Comments UI
-3. Conditional Load Settings.
-4. Disqus Comment Settings.
+3. Advanced Settings.
+4. Pro Version Settings.
+5. Disqus Normal Settings.
 
 == Changelog ==
+
+= 9.0.3 =
+* Fixed ssl issue
+* Fixed comments not loading on urls having #comments
 
 = 9.0.2 =
 * Added new feature - Disabling count.js.
@@ -236,10 +241,9 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.2 =
-* Added new feature - Disabling count.js.
-* Releases [Pro Version](http://store.joelsays.com/).
-* Improved admin page
+= 9.0.3 =
+* Fixed ssl issue
+* Fixed comments not loading on urls having #comments
 
 == Support ==
 

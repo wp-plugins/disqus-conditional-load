@@ -56,13 +56,14 @@
 			$click = 'jQuery(function () {
 						jQuery("#js_comment_div").click(loadDisqus);
 						});';
-			$js = 'loadDisqus();';
 			
 			$condition = (get_option('js_type') == 'scroll') ? $scroll : $click;
 			
 			$script = '<script type="text/javascript">
 						var disqus_shortname = "'.strtolower(get_option("disqus_forum_url")).'";
+						if ( !ds_loaded ) {
 						var ds_loaded = false; //To track loading only once on a page.
+						}
 						function loadDisqus()
 						{
 							var disqus_div = jQuery("#disqus_thread"); //The ID of the Disqus DIV tag
@@ -81,7 +82,7 @@
 								var dsq = document.createElement("script");
 								dsq.type = "text/javascript";
 								dsq.async = true;
-								dsq.src = "http://" + window.disqus_shortname + ".disqus.com/embed.js";
+								dsq.src = "//" + window.disqus_shortname + ".disqus.com/embed.js";
 								jQuery("#hidden-div").html("<h4>'.get_option('js_message').'</h4>");
 								(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
 							}    

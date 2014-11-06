@@ -100,8 +100,22 @@ require_once( dirname(__FILE__) . '/functions/js-options.php' );
     };
 /* ]]> */
 </script>
-
-<?php
+<?php if($js_type !== 'normal'){ ?>
+<script type="text/javascript">
+/* <![CDATA[ */
+var hash = window.location.hash;
+if(hash!==''){
+var ds_loaded = true;
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	
+})();}
+/* ]]> */
+</script>
+<?php }
 if($js_type == 'normal'){ ?>
 <script type="text/javascript">
 /* <![CDATA[ */
