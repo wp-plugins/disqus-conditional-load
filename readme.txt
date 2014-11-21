@@ -3,7 +3,7 @@ Contributors: joelcj91,joelsays
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.0.1
 Stable tag: 9.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
