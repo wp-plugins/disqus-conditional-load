@@ -363,7 +363,7 @@ case 0:
     $dsq_sso_button = get_option('disqus_sso_button');
 ?>
         <?php echo dsq_i('<p>These settings are taken from official Disqus plugin. You will get all official plugin options on this page.</p>') ?>
-		<?php echo dsq_i('<h4>Version: 9.0.3</h4>') ?>
+		<?php echo dsq_i('<h4>Version: 9.0.4</h4>') ?>
         <?php
         if (get_option('disqus_active') == '0') {
             // disqus is not active

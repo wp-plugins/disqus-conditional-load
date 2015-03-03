@@ -3,8 +3,8 @@ Contributors: joelcj91,joelsays
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
-Tested up to: 4.1
-Stable tag: 9.0.3
+Tested up to: 4.1.1
+Stable tag: 9.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,14 +48,19 @@ The Disqus Conditional Load for WordPress seamlessly integrates using the Disqus
 * Free to use with lifetime updates.
 * More feature coming soon.. (You can suggest also)
 
-= Disqus Conditional Load Pro Features =
 
-* Add comments to Wocommerce products.
-* Inbuilt style buttons to load comments
-* Load comments on widgets/sidebars
-* Show comments counts on buttons.
-* Quick direct support
-* More features - *coming soon
+> #### Disqus Conditional Load Pro
+> This plugin has a pro version which comes with the following additional features.<br />
+>
+> - Add comments to Wocommerce products.<br />
+> - Inbuilt style buttons to load comments.<br />
+> - Load comments on widgets/sidebars.<br />
+> - Show comments counts on buttons.<br />
+> - Priority support over email.<br />
+> - Latest Comments Widget - *coming soon
+>
+> [Upgrade to DCL Pro](http://store.joelsays.com)
+
 
 = Disqus Features (Official) Included =
 
@@ -132,6 +137,9 @@ Yes. You can.
 5. Disqus Normal Settings.
 
 == Changelog ==
+
+= 9.0.4 =
+* Fixed issue with woocommerce review tab
 
 = 9.0.3 =
 * Fixed ssl issue
@@ -239,9 +247,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.3 =
-* Fixed ssl issue
-* Fixed comments not loading on urls having #comments
+= 9.0.4 =
+* Fixed issue with woocommerce review tab
 
 == Support ==
 

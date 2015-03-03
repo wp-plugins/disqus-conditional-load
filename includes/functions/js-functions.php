@@ -93,3 +93,20 @@
 		
 		return $script;
 	 }
+	 
+	 /*
+	 * Fixing conflict with woocommerce review system
+	 * 
+	 * @since 9.0.4
+	 */
+		
+		add_action('the_post', 'js_remove_woocommerce_disqus');
+		remove_action('pre_comment_on_post', 'dsq_pre_comment_on_post');
+
+		function js_remove_woocommerce_disqus() {
+			global $post, $wp_query;
+			
+			if (get_post_type() == 'product') { 
+				remove_filter('comments_template', 'dsq_comments_template');
+			}
+		}
