@@ -98,15 +98,12 @@
 	 * Fixing conflict with woocommerce review system
 	 * 
 	 * @since 9.0.4
+	 * @thanks : http://danieljlewis.net/how-to-disable-disqus-on-wordpress-custom-post-types/
 	 */
 		
-		add_action('the_post', 'js_remove_woocommerce_disqus');
-		remove_action('pre_comment_on_post', 'dsq_pre_comment_on_post');
-
-		function js_remove_woocommerce_disqus() {
-			global $post, $wp_query;
-			
-			if (get_post_type() == 'product') { 
+		add_filter( 'comments_template' , 'js_block_disqus', 1 );
+		function js_block_disqus($file) {
+			if ( 'product' == get_post_type() )
 				remove_filter('comments_template', 'dsq_comments_template');
-			}
+			return $file;
 		}

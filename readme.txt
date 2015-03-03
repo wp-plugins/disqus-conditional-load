@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 9.0.4
+Stable tag: 9.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,10 @@ Advanced version of Disqus Commenting System. Experience the boosted page loadin
 
 = <a href="http://store.joelsays.com/">DCL Pro Version - available with a lot more features!!</a> =
 
-> DCL Pro version is available now. Pro version gives more features like WooCommerce support, Comments on Widgets and Sidebars, Stylish Inbuilt Comment Buttons, Comments count on button etc. <a href="http://store.joelsays.com/">See Pro Version Details</a>.
+
+> DCL Pro version is available now. <br/>
+Pro version gives more features like WooCommerce support, Comments on Widgets and Sidebars, Stylish Inbuilt Comment Buttons, Comments count on button etc.<br/>
+<a href="http://store.joelsays.com/">See Pro Version Details</a>.
 
 ------------------------------------------
 
@@ -138,6 +141,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 9.0.5 =
+* Fixed issue with custom posts
+
 = 9.0.4 =
 * Fixed issue with woocommerce review tab
 
@@ -247,8 +253,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.4 =
-* Fixed issue with woocommerce review tab
+= 9.0.5 =
+* Fixed issue with custom posts
 
 == Support ==
 
