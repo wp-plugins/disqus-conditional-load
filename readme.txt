@@ -17,8 +17,8 @@ Advanced version of Disqus Commenting System. Experience the boosted page loadin
 = <a href="http://store.joelsays.com/">DCL Pro Version - available with a lot more features!!</a> =
 
 
-> DCL Pro version is available now. <br/>
-Pro version gives more features like WooCommerce support, Comments on Widgets and Sidebars, Stylish Inbuilt Comment Buttons, Comments count on button etc.<br/>
+> DCL Pro version is available now.
+Pro version gives more features like WooCommerce support, Comments on Widgets and Sidebars, Stylish Inbuilt Comment Buttons, Comments count on button etc.
 <a href="http://store.joelsays.com/">See Pro Version Details</a>.
 
 ------------------------------------------
