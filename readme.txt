@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 9.0.5
+Stable tag: 9.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -141,6 +141,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 9.0.6 =
+* Fixed a bug ( Not going directly to a particular comments if link contains #comments )
+
 = 9.0.5 =
 * Fixed issue with custom posts
 
@@ -253,8 +256,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.5 =
-* Fixed issue with custom posts
+= 9.0.6 =
+* Fixed a bug ( Not going directly to a particular comments if link contains #comments )
 
 == Support ==
 
