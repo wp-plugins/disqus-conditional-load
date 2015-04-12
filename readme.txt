@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 9.0.7
+Stable tag: 9.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -140,8 +140,11 @@ Yes. You can.
 
 == Changelog ==
 
-= 9.0.7 =
+= 9.0.8 =
 * Moved jQuery code to footer for performance
+
+= 9.0.7 =
+* A small bug fix
 
 = 9.0.6 =
 * Fixed a bug ( Not going directly to a particular comments if link contains #comments )
