@@ -4,7 +4,7 @@ Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comment
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 9.0.6
+Stable tag: 9.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,6 @@ Use Disqus comments with advanced features like lazy load, shortcode etc. Boost 
 
 Advanced version of Disqus Commenting System. Experience the boosted page loading speed difference. This free plugin adds advanced features like lazy loading and SHORTCODE, script disabling etc to official Disqus plugin.
 
-= <a href="http://store.joelsays.com/">DCL Pro Version - available with a lot more features!!</a> =
 
 
 > DCL Pro version is available now.
@@ -141,6 +140,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 9.0.7 =
+* Moved jQuery code to footer for performance
+
 = 9.0.6 =
 * Fixed a bug ( Not going directly to a particular comments if link contains #comments )
 
@@ -256,8 +258,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.6 =
-* Fixed a bug ( Not going directly to a particular comments if link contains #comments )
+= 9.0.7 =
+* Moved jQuery code to footer for performance
 
 == Support ==
 

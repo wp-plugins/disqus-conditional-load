@@ -100,36 +100,12 @@ require_once( dirname(__FILE__) . '/functions/js-options.php' );
     };
 /* ]]> */
 </script>
-<?php if($js_type !== 'normal'){ ?>
-<script type="text/javascript">
-/* <![CDATA[ */
-var hash = window.location.hash;
-if(hash!==''){
-var ds_loaded = true;
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    
-})();}
-/* ]]> */
-</script>
-<?php }
-if($js_type == 'normal'){ ?>
-<script type="text/javascript">
-/* <![CDATA[ */
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-	var disqus_shortname = '<?php echo strtolower(get_option('disqus_forum_url')); ?>';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-/* ]]> */
-</script>
-<?php }
+<?php
+if($js_type == 'normal'){
+	add_action('wp_footer', 'js_normal_conditional_code', 100);
+}
 else
 {
-echo js_disqus_conditional_code();
+	add_action('wp_footer', 'js_comments_hash_load', 100);
+	add_action('wp_footer', 'js_disqus_conditional_code', 100);
 }

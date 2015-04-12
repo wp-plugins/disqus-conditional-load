@@ -61,8 +61,8 @@
 			
 			$script = '<script type="text/javascript">
 						var disqus_shortname = "'.strtolower(get_option("disqus_forum_url")).'";
-						if ( !ds_loaded ) {
-						var ds_loaded = false; //To track loading only once on a page.
+						if (typeof ds_loaded == "undefined") {
+							var ds_loaded = false; //To track loading only once on a page.
 						}
 						function loadDisqus()
 						{
@@ -91,7 +91,49 @@
 			$script .= $condition;		
 			$script .= '</script>';
 		
-		return $script;
+		echo $script;
+	 }
+	 
+	 /*
+	 * Normal Disqus code without lazy load
+	 */
+	 function js_normal_conditional_code() {
+		$script = '';
+		$script = "<script type='text/javascript'>
+					/* <![CDATA[ */
+					(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+						var disqus_shortname = '".strtolower(get_option('disqus_forum_url'))."';
+						dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+					/* ]]> */
+					</script>";
+		echo $script;
+	 }
+	 
+	 /*
+	 * Function to laod comments if comments url
+	 */
+	 function js_comments_hash_load() {
+		$script = "";
+		$script = "<script type='text/javascript'>
+					/* <![CDATA[ */
+					var hash = window.location.hash;
+					if(hash!==''){
+					var ds_loaded = true;
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+						dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						
+					})();}
+					/* ]]> */
+					</script>";
+		echo $script;
+		
 	 }
 	 
 	 /*
