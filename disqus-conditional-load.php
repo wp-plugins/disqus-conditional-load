@@ -4,7 +4,7 @@
 	Plugin URI: http://www.joelsays.com/plugins/disqus-conditional-load/
 	Description: Use Disqus commenting system with plenty of advanced featured like lazy load, woocommerce support, counts etc.
 	Author: Joel James
-	Version: 9.0.8
+	Version: 9.0.9
 	Author URI: http://www.joelsays.com/about-me/
 	Donate link: http://www.joelsays.com/donation/
 */
@@ -152,6 +152,7 @@ function dsq_can_replace() {
     if ( !isset($post) )                   { return false; }
     if ( 'draft' == $post->post_status )   { return false; }
     if ( !get_option('disqus_forum_url') ) { return false; }
+	if ( 'product' == get_post_type() )    { return false; }
     else if ( 'all' == $replace )          { return true; }
 
     if ( !isset($post->comment_count) ) {

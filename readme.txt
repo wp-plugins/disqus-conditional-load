@@ -1,10 +1,10 @@
 === Disqus Conditional Load ===
-Contributors: joelcj91,joelsays
+Contributors: joelcj91
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus lazy load, lazy load comments, comments
 Donate link: http://www.joelsays.com/donation/
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 9.0.8
+Tested up to: 4.2
+Stable tag: 9.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -140,6 +140,9 @@ Yes. You can.
 
 == Changelog ==
 
+= 9.0.9 =
+* Fixed issues with Woocommerce review
+
 = 9.0.8 =
 * Moved jQuery code to footer for performance
 
@@ -261,8 +264,8 @@ Yes. You can.
 
 == Upgrade Notice ==
 
-= 9.0.7 =
-* Moved jQuery code to footer for performance
+= 9.0.9 =
+* Fixed issues with Woocommerce review
 
 == Support ==
 
