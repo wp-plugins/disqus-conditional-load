@@ -47,8 +47,8 @@ if ( ! defined( 'WPINC' ) ) {
 				<p><span class="description thin">How about showing comments for Woocommerce products and EDD? Normally if you use Disqus, you won't be able to show Woocommerce review. But now you can <strong>show comments in new tab</strong> as well as <strong>inside product description</strong>. And you are ready to integrate Disqus comments with EDD products too!</span></p>
 			</div>
 			<div class="dcl-column2">
-				<h3 class="dcl-pro-h3">Easy Digital Downloads Comments</h3><p>
-				<span class="description thin">And yes!! You are ready to integrate Disqus comments with EDD products. DCL Pro will let you <strong>show Disqus comments for Easy Digital Downloads products</strong>, just like other posts and pages. You can enable/disable this anytime.</span></p>
+				<h3 class="dcl-pro-h3">Separate Options for Desktop and Mobile</h3><p>
+				<span class="description thin">DCL Pro will allow you to use separate lazy loading options in <strong>mobile and desktop</strong> devices. For example, you can use On Scroll load in mobile devices while using On Click on desktop devices. You may enable or disable lazy loading only on mobile/desktop. F</span></p>
 			</div>
 			<div class="dcl-column3">
 				<h3 class="dcl-pro-h3">Priority Email Support</h3><p>
