@@ -4,7 +4,7 @@ Donate link: https://dclwp.com/
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus, woocommerce comments, edd comments
 Requires at least: 3.0
 Tested up to: 4.2.3
-Stable tag: 10.0.1
+Stable tag: 10.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,15 +12,13 @@ Use Disqus comments with advanced features like lazy load, shortcode, widgets et
 
 == Description ==
 
-= Disqus Conditional Load =
-
 DCL is an advanced version of Disqus Commenting System, with which experience the boosted page loading speed difference. This free plugin adds advanced features like lazy loading and SHORTCODE, comment widgets, script disabling etc to your Disqus powered website.
 
 **Disqus Conditional Load, popular features..**
 
 - All the features from official Disqus plugin.
 - Lazy load Disqus comments using - OnScroll,OnClick and Normal.
-- Use shortcode to load comments anywhere.
+- Use **shortcode** to load comments anywhere.
 - Adjust Disqus container width
 - Disable/Enable count scripts if not using.
 - Developer friendly.
@@ -147,6 +145,11 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 
 == Changelog ==
+
+= 10.0.2 =
+
+**Improvements**
+- Fixed old options not being transferred when updating.
 
 = 10.0.1 =
 
@@ -285,5 +288,5 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 == Upgrade Notice ==
 
-= 10.0.1 =
-Big improvements in coding standard, introducing new feature and some bug fixes.
+= 10.0.2 =
+- Fixed old options not being transferred when updating.
