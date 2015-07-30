@@ -99,11 +99,9 @@ class DCL_Admin {
 	public function dcl_upgrade_if_new() {
 	
 		if ( !get_option('dcl_version_no') || ( get_option('dcl_version_no') <= DCL_VERSION  ) ) {
-			
-			if( !class_exists( 'DCL_Activator' ) ) {
-				include_once( plugin_dir_path( __FILE__ ) . '../includes/class-dcl-activator.php' );
+			if( class_exists( 'DCL_Activator' ) ) {
+				DCL_Activator::activate();
 			}
-			DCL_Activator::activate();
 			update_option('dcl_version_no', DCL_VERSION );
 		}
 	}
