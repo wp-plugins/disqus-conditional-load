@@ -149,9 +149,9 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 = 10.0.3 =
 
 **Bug Fixes**
-- Fixed - not loading when 'Render Javascript in external files' unchecked
-- Fixed Activator class error
-- Fixed undefined variable from Disqus
+- Fixed not loading when 'Render Javascript in external files' unchecked.
+- Fixed Activator class error.
+- Fixed undefined variable from Disqus.
 
 = 10.0.2 =
 
