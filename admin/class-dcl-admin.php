@@ -82,7 +82,8 @@ class DCL_Admin {
 		if ( get_option('dcl_do_activation_redirect') ) {
 			delete_option('dcl_do_activation_redirect');
 			if( !dsq_is_installed() ) {
-				exit(wp_redirect( DCL_DISQUS_PAGE ));
+				wp_redirect( DCL_DISQUS_PAGE );
+				exit();
 			}
 		}
 	}
