@@ -4,7 +4,7 @@ Donate link: https://dclwp.com/
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus, woocommerce comments, edd comments
 Requires at least: 3.0
 Tested up to: 4.2.3
-Stable tag: 10.0.6
+Stable tag: 10.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,12 +147,13 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 == Changelog ==
 
-= 10.0.6 =
+= 10.0.7 =
 
 **Bug Fixes**
 - Fixed issues with custom post type support
 - Removed activation set up redirect since it is causing issues on few servers ( Nginx )
 - Added warning message if Disqus is not configured properly.
+- Removed DCL settings sub menu links since it is causing redirect error.
 
 = 10.0.5 =
 
@@ -308,5 +309,5 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 == Upgrade Notice ==
 
-= 10.0.6 =
+= 10.0.7 =
 - Fixed issues with custom post type and wp_recdirect()

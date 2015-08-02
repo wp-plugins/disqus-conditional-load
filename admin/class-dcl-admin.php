@@ -125,24 +125,6 @@ class DCL_Admin {
 			plugin_dir_url( __FILE__ ) . 'images/js-icon.png'
 		);
 		
-		add_submenu_page( 
-			'dcl-settings', 
-			'Disqus Settings', 
-			'Disqus Settings', 
-			DCL_ADMIN_PERMISSION, 
-			'dcl-disqus-redirect', 
-			array( $this, 'dcl_disqus_page' ) 
-		);
-		
-		add_submenu_page( 
-			'dcl-settings', 
-			'DCL Pro', 
-			'Pro Features', 
-			DCL_ADMIN_PERMISSION, 
-			'dcl-settings&tab=pro', 
-			array( $this, 'dcl_admin_page' ) 
-		);
-		
 	}
 
 	/**
@@ -157,20 +139,7 @@ class DCL_Admin {
 	public function dcl_admin_page() {
 		require plugin_dir_path( __FILE__ ) . 'partials/dcl-admin-display.php';
 	}
-	
-	/**
-	* Redirect to Disqus page.
-	*
-	* Function to make a redirect to Dsqus settings page.
-	* This is used to add a new nav for user friendly.
-	* @since    1.0.0
-	* @uses		wp_redirect()	WordPress redirection hook.
-	* @author	Joel James
-	*/
-	public function dcl_disqus_page() {
-		wp_redirect( DCL_DISQUS_PAGE );
-		exit();
-	}
+
 	
 	/**
 	* Registering DCL options.
