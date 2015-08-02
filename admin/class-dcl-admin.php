@@ -70,21 +70,20 @@ class DCL_Admin {
 	
 	
 	/**
-	 * Redirect to installation page
+	 * Show warning message if Disqus is not configured
 	 *
-	 * If Disqus is not setup, let us redirect them to setup.
+	 * If Disqus is not setup, let us warn user that they need to set it up.
+	 * Otherwise comments will not work
 	 * @since	10.0.0
-	 * @uses	get_option()	To get the activation redirect option from db.
+	 * @uses	dsq_is_installed()	To check if Disqus configured.
 	 * @return	void.
 	 */
-	public function dcl_setup_redirect() {  
+	public function dcl_setup_required_notice() {  
 		
-		if ( get_option('dcl_do_activation_redirect') ) {
-			delete_option('dcl_do_activation_redirect');
-			if( !dsq_is_installed() ) {
-				wp_redirect( DCL_DISQUS_PAGE );
-				exit();
-			}
+		if( !dsq_is_installed() ) {
+			$class = "error";
+			$message = "<strong>Please configure Disqus in order to start using Disqus comments. <a href='".DCL_DISQUS_PAGE."'>Click here</a> to configure</strong>";
+			echo "<div class=\"$class\"> <p>$message</p></div>"; 
 		}
 	}
 	

@@ -4,7 +4,7 @@ Donate link: https://dclwp.com/
 Tags: disqus, disqus conditional load, comment hide, hide disqus, disqus comments, disqus on click, disqus auto load, disqus, woocommerce comments, edd comments
 Requires at least: 3.0
 Tested up to: 4.2.3
-Stable tag: 10.0.5
+Stable tag: 10.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,7 @@ DCL is an advanced version of Disqus Commenting System, with which experience th
 - All the features from official Disqus plugin.
 - Lazy load Disqus comments using - OnScroll,OnClick and Normal.
 - Use **shortcode** to load comments anywhere.
+- **Custom Post Types** support.
 - Adjust Disqus container width
 - Disable/Enable count scripts if not using.
 - Developer friendly.
@@ -35,7 +36,7 @@ DCL is an advanced version of Disqus Commenting System, with which experience th
 > - Easy Digital Downloads support.<br />
 > - Comment Count on Button.<br />
 > - Disqus Comments as Widget.<br />
-> - Disqus Popular Comments Widget.<br />
+> - Disqus **Popular Comments Widget**<br />
 > - Beautiful inbuilt button styles.<br />
 > - Priority support over email.<br />
 >
@@ -145,6 +146,13 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 
 == Changelog ==
+
+= 10.0.6 =
+
+**Bug Fixes**
+- Fixed issues with custom post type support
+- Removed activation set up redirect since it is causing issues on few servers ( Nginx )
+- Added warning message if Disqus is not configured properly.
 
 = 10.0.5 =
 
@@ -300,5 +308,5 @@ Bug reports for DCL are always welcome. [Report here](https://dclwp.com/bugs/). 
 
 == Upgrade Notice ==
 
-= 10.0.5 =
-- Fixed issue with count.js
+= 10.0.6 =
+- Fixed issues with custom post type and wp_recdirect()
