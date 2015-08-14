@@ -134,6 +134,7 @@ if ( ! defined( 'WPINC' ) ) {
 	* normally, without lazy load.
 	*
 	* @since    10.0.0
+	* @modified 14/8/2015
 	* @author	Joel James
 	* @echo		$normal		Disqus comments script call.
 	*/
@@ -147,7 +148,7 @@ if ( ! defined( 'WPINC' ) ) {
 					(function() {
 						var dsq = document.createElement('script'); dsq.type = 'text/javascript';
 						dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=".DISQUS_VERSION."';
 						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 					})();
 					/* ]]> */
@@ -164,6 +165,7 @@ if ( ! defined( 'WPINC' ) ) {
 	* a particular comment.
 	*
 	* @since    10.0.0
+	* @modified 14/8/2015
 	* @author	Joel James
 	* @echo		$script		Normal disqus code with hash checking.
 	*/
@@ -178,7 +180,7 @@ if ( ! defined( 'WPINC' ) ) {
 					(function() {
 						var dsq = document.createElement('script'); dsq.type = 'text/javascript';
 						dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
+						dsq.src = '//' + disqus_shortname + '.' + '".DISQUS_DOMAIN."' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=".DISQUS_VERSION."';
 						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 					})();}
 					/* ]]> */
